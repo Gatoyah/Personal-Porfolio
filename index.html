@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="queries.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.13.0/lottie.min.js"></script>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+        <nav id="home" class="nav-bar reveal">
+            <div class="nav-bar-inner">
+                <a href="#home" class="logo">
+                    <img class="logo-img socials-logo" src="images/logo.svg" alt="Logo">
+                    <p class="logo-name">GIDE</p>
+                </a>
+                <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+                <ul class="nav-links">
+                    <li class="lists-nav"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="lists-nav"><a class="nav-link" href="#about">About</a></li>
+                    <li class="lists-nav"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="lists-nav"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="lists-nav"><a class="nav-link" href="#project">Projects</a></li>
+                    <li class="lists-nav"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+          <!-- HERO SECTION -->
+    <div class="container">
+        <div class="hero">
+            <section class="hero-section">
+                <div>
+                    <div class="hero-bg" id="canvas" width = "300px" height = "300px">
+                        <script>
+                            const animation = bodymovin.loadAnimation({
+                            container: document.getElementById('canvas'),
+                            renderer: 'svg',
+                            loop: true,
+                            autoplay: true,
+                            path: 'background-sparkles.json'
+                        })
+                        </script>
+                    </div>
+
+                <div class="hero-content">
+                    <h1 class="intro-name">Hi There,<br>I'm Gideon <span class="name">Atoyah</span></h1>
+
+                    <p class="intro-about">
+                        I Am Into 
+                        <span class="intro-skills">Backend Development</span>
+                    </p>
+
+                    <a class="about-me nav-link" href="#about">About Me ▼</a>
+
+                    <!-- SOCIAL LINKS -->
+                    <div class="socials-links">
+                        <a href="https://www.linkedin.com/in/gideon-atoyah-aa206a241/"> <img class="socials" src="images/linkenin.svg" alt="Linkedin"></a>
+                        <a href="https://github.com/Gatoyah"><img class="socials" src="images/github.svg" alt="GitHub"></a>
+                        <a href="https://x.com/g_hebbron20"><img class="socials" src="images/twitter.svg" alt="Twitter"></a>
+                        <a href="#"><img class="socials" src="images/telegram.svg" alt="Telegram"></a>
+                        <a href="#"><img class="socials" src="images/instagram.svg" alt="Instagram"></a>
+                    </div>
+                </div>
+                </div>
+
+                <!-- HERO SECTION IMAGE -->
+                <img class="hero-profile" src="images/gideonnn.png" alt="Profile Image">
+            </section>
+    </div>
+</div>
+      
+    <section id="about"  class="about">
+        <div class="about-section">
+            <h1 class="section-title">👤 About <span class="edit-me">Me</span></h1>
+            <div class="about-content">
+                <img src="images/gideonnn.png" alt="Profile Image" class="profile">
+                </li>
+                <div class="about-text">
+                    <h2 class="about-me-name">I'm Gideon Atoyah</h2>
+                    <p class="about-me-title">Full Stack Developer</p>
+                    <p class="about-me-para">
+                        I am a backend developer with a passion for creating efficient and scalable web applications. With a strong foundation in server-side technologies, I specialize in building robust APIs and managing databases. I enjoy solving complex problems and continuously learning new technologies to enhance my skills.
+                    </p>
+                <li>
+                    <ul><span>Email:</span> gideonatoyah@gmail.com</ul>
+                    <ul><span>Country: </span>Ghana</ul>
+                </li>
+                    <a class="resume" href="assets/resume/My CV.pdf" target="_blank" rel="noopener">Resume ></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="skills" class="skills reveal">
+        <h1 class="skills-title">💻 Skills ﹠ <span class="skills-title-highlight">Abilities</span></h1>
+        <div class="skills-container">
+            <li class="skills-lists">
+                <ul class="skills-cover"><img class="skills-icons" src="skills-icons/html.svg" alt="">HTML5</ul>
+                <ul class="skills-cover"><img class="skills-icons" src="skills-icons/css.svg" alt="">CSS3</ul>
+                <ul class="skills-cover"><img class="skills-icons" src="skills-icons/javascript.svg" alt="">JavaScript</ul>
+                <ul class="skills-cover"><img class="skills-icons" src="skills-icons/bootstrap.svg" alt="">Bootstrap</ul>
+                <ul class="skills-cover"><img class="skills-icons" src="skills-icons/tailwindcss.svg" alt="">Tailwind CSS</ul>
+                <ul class="skills-cover"><img class="skills-icons" src="skills-icons/nodejs.svg" alt="">NodeJS</ul>
+                <ul class="skills-cover"><img class="skills-icons" src="skills-icons/expressjs-dark.svg" alt="">ExpressJS</ul>
+                <ul class="skills-cover"><img class="skills-icons" src="skills-icons/react.svg" alt="">React</ul>
+                <ul class="skills-cover"><img class="skills-icons" src="skills-icons/github.svg" alt="">GitHub</ul>
+                <ul class="skills-cover"><img class="skills-icons" src="skills-icons/aws.svg" alt="">AWS</ul>
+                <ul class="skills-cover"><img class="skills-icons" src="skills-icons/wordpress.svg" alt="">WordPress</ul>
+                <ul class="skills-cover"><img class="skills-icons" src="skills-icons/mongodb.svg" alt="">MongoDB</ul>
+            </li>
+        </div>
+    </div>
+    
+    <div id="education" class="section-education reveal">
+        <div class="education">
+            <section class="education-title">
+                <h1 class="education-header">&#127891 My <span class="edit-education">Education</span></h1>
+                <p>Education Is The Key To Unlocking The World, A Passport To Freedom</p>
+            </section>
+
+            <div class="uni">
+                <img class="education-image" src="images/knustlogo.jpg" alt="">
+                <section class="uni-description">
+                    <p class="program">Bsc Biomedical Engineering</p><br>
+                    <p class="school">Kwame Nkrumah University Of Science And Technology</p><br>
+                    <p class="year"> 2021-2025</p>
+                </section>
+            </div>
+
+            <div class="shs">
+                <img class="education-image" src="images/sthubertlogo.png" alt="">
+                <section class="shs-description">
+                    <p class="program">General Science</p><br>
+                    <p class="school">St Hubert Seminary Senior High School</p><br>
+                    <p class="year">2018-2021</p>
+                </section>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="project" class="project">
+        <h1 class="project-heading">💻 PROJECTS <span class="project-heading-edit">MADE</span></h1>
+
+        <section class="project-section">
+    
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/projects/barber.png" alt="">
+                </div>
+
+                <div class="project-info">
+                    <h3 class="project-name">Barber Website</h3>
+                </div>
+                <div class="project-hover">
+                    <p class="project-description">A clean and responsive barbering website designed to showcase services, pricing, and barbers with an easy appointment flow. Built to give customers a clear view of available styles while helping the business attract and convert walk-in and online clients</p>
+
+                    <div class="buttons">
+                        <a class="view" href="#">View 👁</a>
+                        <a class="code" href="#">Code 💻</a>
+                    </div>
+                </div>  
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/projects/photolab-project.png" alt="">
+                </div>
+
+                <div class="project-info">
+                    <h3 class="project-name">Photolab</h3>
+                </div>
+                <div class="project-hover">
+                    <p class="project-description">PhotoLab is a minimalist landing page concept for a photography and photo-editing brand.
+                        The project focuses on the hero section only, 
+                        highlighting strong visual hierarchy, bold typography, 
+                        and imagery to immediately capture attention and 
+                        communicate the brand’s creative identity.</p>
+
+                    <div class="buttons">
+                        <a class="view" href="#">View 👁</a>
+                        <a class="code" href="#">Code 💻</a>
+                    </div>
+                </div>  
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/projects/fondo-project.png" alt="">
+                </div>
+
+                <div class="project-info">
+                    <h3 class="project-name">Fondo</h3>
+                </div>
+                <div class="project-hover">
+                    <p class="project-description">Fondo is a UI/UX design concept focused 
+                        on the hero section of a modern digital 
+                        product. The project explores layout, spacing, 
+                        typography, and color harmony to create a visually 
+                        appealing 
+                        and user-friendly first impression</p>
+
+                    <div class="buttons">
+                        <a class="view" href="#">View 👁</a>
+                        <a class="code" href="#">Code 💻</a>
+                    </div>
+                </div>  
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/projects/calculator.png" alt="">
+                </div>
+
+                <div class="project-info">
+                    <h3 class="project-name">Calculator</h3>
+                </div>
+                <div class="project-hover">
+                    <p class="project-description">This project is a fully functional iPhone-style 
+                        calculator built to replicate the original user 
+                        experience. It handles core arithmetic operations with 
+                        accurate logic, smooth interactions, and a familiar 
+                        interface, demonstrating attention to detail in 
+                        both functionality and UI behavior.</p>
+
+                    <div class="buttons">
+                        <a class="view" href="#">View 👁</a>
+                        <a class="code" href="#">Code 💻</a>
+                    </div>
+                </div>  
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/projects/login-form.png" alt="">
+                </div>
+
+                <div class="project-info">
+                    <h3 class="project-name">Login Form</h3>
+                </div>
+                <div class="project-hover">
+                    <p class="project-description">This project is a clean and responsive 
+                        login form designed with usability and 
+                        accessibility in mind. It emphasizes clear input 
+                        fields, intuitive layout, and visual feedback to ensure 
+                        a smooth and user-friendly 
+                        authentication experience</p>
+
+                    <div class="buttons">
+                        <a class="view" href="#">View 👁</a>
+                        <a class="code" href="#">Code 💻</a>
+                    </div>
+                </div>  
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/projects/quill-project.png" alt="">
+                </div>
+
+                <div class="project-info">
+                    <h3 class="project-name">Quill</h3>
+                </div>
+                <div class="project-hover">
+                    <p class="project-description">The Journal App is a simple 
+                        productivity tool designed for taking 
+                        notes, journaling, and organizing personal 
+                        thoughts. It focuses on clarity, ease of use, and a 
+                        distraction-free interface to encourage consistent 
+                        writing and organization</p>
+
+                    <div class="buttons">
+                        <a class="view" href="#">View 👁</a>
+                        <a class="code" href="#">Code 💻</a>
+                    </div>
+                </div>  
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/projects/Vitatale.png" alt="">
+                </div>
+
+                <div class="project-info">
+                    <h3 class="project-name">Vitatale</h3>
+                </div>
+                <div class="project-hover">
+                    <p class="project-description">VitaTale is a lifestyle and wellness 
+                        application that tracks daily habits 
+                        such as water intake, step count, mood, stress 
+                        levels, and sleep hours. Using this data, it generates a 
+                        personalized daily routine aimed at helping users 
+                        build healthier habits 
+                        and improve overall well-being.</p>
+
+                    <div class="buttons">
+                        <a class="view" href="#">View 👁</a>
+                        <a class="code" href="#">Code 💻</a>
+                    </div>
+                </div>  
+            </div>
+
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="assets/projects/Merry.jpg" alt="">
+                </div>
+
+                <div class="project-info">
+                    <h3 class="project-name">Christmas Flyer</h3>
+                </div>
+                <div class="project-hover">
+                    <p class="project-description">VitaTale is a lifestyle and wellness 
+                        application that tracks daily habits 
+                        such as water intake, step count, mood, stress 
+                        levels, and sleep hours. Using this data, it generates a 
+                        personalized daily routine aimed at helping users 
+                        build healthier habits 
+                        and improve overall well-being.</p>
+
+                    <div class="buttons">
+                        <a class="view" href="#">View 👁</a>
+                        <a class="code" href="#">Code 💻</a>
+                    </div>
+                </div>  
+            </div>
+
+            <div id="kitchenware-flyer" class="project-card">
+                <div class="project-image">
+                    <img src="assets/projects/venex.jpg" alt="">
+                </div>
+
+                <div class="project-info">
+                    <h3 class="project-name">Kitchenware Flyer</h3>
+                </div>
+                <div class="project-hover">
+                    <p class="project-description">VitaTale is a lifestyle and wellness 
+                        application that tracks daily habits 
+                        such as water intake, step count, mood, stress 
+                        levels, and sleep hours. Using this data, it generates a 
+                        personalized daily routine aimed at helping users 
+                        build healthier habits 
+                        and improve overall well-being.</p>
+
+                    <div class="buttons">
+                        <a class="view" href="#">View 👁</a>
+                        <a class="code" href="#">Code 💻</a>
+                    </div>
+                </div>  
+            </div>
+        </section>
+        
+        <div class="view-all">
+            <a href="projects/project.html" class="buttons buttons-view-all">View all ></a>
+        </div>
+    </div>
+
+    <div id="contact" class="get-in-touch reveal">
+        <h1 class="get-in-touch-heading">🎧 Get In <span>Touch</span></h1>
+        <div class="get-in-touch-content">
+            <img class="contact-us-image" src="images/contact-us (2).svg" alt="">
+            <div class="get-in-touch-submission">
+                <form class="form" action="#" method="post">
+                    <!-- Name -->
+                    <label for="name"></label>
+                    <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="👤 Name"
+                    required
+                    >
+
+                    <!-- Email -->
+                    <label for="email"></label>
+                    <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="&#128232 Email"
+                    required
+                    >
+
+                    <!-- Mobile -->
+                    <label for="mobile"></label>
+                    <input
+                    type="tel"
+                    id="mobile"
+                    name="mobile"
+                    placeholder="📱 Mobile"
+                    >
+
+                    <!-- Message -->
+                    <label for="message"></label>
+                    <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    placeholder="&#128495 Message"
+                    required
+                    ></textarea>
+
+                    <!-- Submit Button -->
+                    <button class="submit-message" type="submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer reveal">
+        <div class="footer-content">
+            <div class="portfolio">
+                <h2>Portfolio</h2>
+                <p>Thank you for visiting my personal portfolio website!</p>
+            </div>
+
+            <div class="footer-links">
+                <h2>Quick Links</h2>
+                <ul class="quick-links">
+                    <li><a class="nav-link" href="#home">> Home</a></li>
+                    <li><a class="nav-link" href="#about">> About</a></li>
+                    <li><a class="nav-link" href="#skills">> Skills</a></li>
+                    <li><a class="nav-link" href="#education">> Education</a></li>
+                    <li><a class="nav-link" href="#project">> Projects</a></li>
+                </ul>
+            </div>
+
+            <div class="contact-info">
+                <h2>Contact Info</h2>
+                <p>📞 +233257770578</p>
+                <p>📧 gideonatoyah@gmail.com</p>
+                <p>📍 Ghana</p>
+
+                <div class="footer-socials">
+                    <a href="https://www.linkedin.com/in/gideon-atoyah-aa206a241/"> <img class="socials" src="images/linkenin.svg" alt="Linkedin"></a>
+                    <a href="https://github.com/Gatoyah"><img class="socials" src="images/github.svg" alt="GitHub"></a>
+                    <a href="https://x.com/g_hebbron20"><img class="socials" src="images/twitter.svg" alt="Twitter"></a>
+                    <a href=""><img class="socials" src="images/telegram.svg" alt="Telegram"></a>
+                    <a href="#"><img class="socials" src="images/instagram.svg" alt="Instagram"></a>
+                </div>
+            </div>
+            
+        </div>
+    </footer>
+
+
+    <script src="home.js"></script>
+</body>
+</html>
