@@ -1,21 +1,31 @@
 @media(max-width: 150rem){
     html{
-        font-size: 56.25%;
+        font-size: 59.375%;
+    }
+
+    .intro-name{
+        font-size: var(--text-h1);
+    }
+
+    .intro-about{
+        font-size: var(--text-h5);
     }
 
     .about-section{
         min-height: auto;
-        padding-block: clamp(6rem, 10vw, 6rem);
+        padding-block: clamp(2rem, 10vw, 1rem);
+        padding-bottom: 10rem;
     }
 
     .section-education{
         height: 100%;
     }
     
-    .hero, .container{
-       padding-block: clamp(2rem, 10vw, 2rem);
-       height: calc(100vh-var(--nav-height));
+    .hero{
+       padding-block: clamp(0rem, 10vw, 0rem);
        padding-bottom: 7.3rem;
+       margin-top: 10rem;
+       min-height: auto;
     }
 
     h2, h3, h4, h5, h6{
@@ -28,8 +38,27 @@
         height: 350px;
     }
 
-    .project-section{
-        width: 70%;
+    .carousel-wrapper{
+        width: 90%;
+    }
+
+    .get-in-touch-submission, form{
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .get-in-touch-content{
+        padding: 3rem;
+    }
+
+    #name, #email, #message, #mobile{
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .submit-message{
+        max-width: 100%;
     }
 }
 
@@ -43,9 +72,17 @@
         font-size: var(--text-base);
     }
 
-    .hero, .container{
+    .nav-links{
+        font-size: var(--text-h6);
+    }
+
+    .hero{
         min-height: auto;
         padding-block: clamp(0rem, 10vw, 0rem);
+    }
+
+    .hero{
+        margin-top: 10rem;
     }
 
     .hero-bg{
@@ -65,7 +102,6 @@
     .about{
         min-height: auto;
         padding-block: clamp(.5rem, 10vw, .5rem);
-        padding-bottom: 5rem;
     }
 
     .get-in-touch {
@@ -73,15 +109,31 @@
     }
 
     .get-in-touch-content{
-        width: 75%;
-        gap: 3rem;
-        grid-template-columns: 1fr 2fr;
+        width: 70%;
+        gap: 2.5rem;
+        grid-template-columns: auto .8fr;
+        padding: 3rem;
+    }
+
+    #name, #email, #message, #mobile{
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     .contact-us-image{
         width: 100%;
-        max-width: 250px;
-        padding-left: 2rem;
+        max-width: 270px;
+        padding-left: 5rem;
+    }
+
+    .get-in-touch-submission, form{
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .submit-message{
+        max-width: 100%;
     }
 
     .education-image{
@@ -95,27 +147,27 @@
         margin: 0 auto;
     }
 
-    .project-description p{
-        font-size: 1.8rem;
+    .project-card{
+        width: 300px;
     }
 
-    .project-card:hover .project-hover {
-        transform: translateY(0);
-    }
-
-    .project-card:hover .project-info {
-        transform: translateY(-215px);
-    }
-
-    .project-hover{
-        height: 240px;
+    .footer-text{
+        font-size: 2rem;
+        letter-spacing: 0.0005rem;
     }
 }
 
 @media(max-width: 75rem){
-    
-    .project-card:hover .project-info {
-    transform: translateY(-230px);
+    .project-card{
+        width: 280px;
+    }
+
+    .hero-section{
+        grid-template-columns: 1.7fr 1.5fr;
+    }
+
+    .footer-header{
+        font-size: 3rem;
     }
 }
 
@@ -129,13 +181,24 @@
         height: 60px;
     }
 
+    .nav-links{
+        font-size: 2rem;
+    }
+
     .hero-section{
         gap: 5rem;
     }
 
+    .skills-cover{
+        font-size: 2.5rem;
+    }
+/* 
     .about-section{
         padding-block: clamp(3rem, 10vw, 3rem);
-        padding-bottom: 5rem;
+    } */
+
+    .about-me-name{
+        font-size: var(--text-h4);
     }
 
     .about-content{
@@ -184,7 +247,7 @@
     .get-in-touch-content{
         width: 80%;
         gap: 2rem;
-        grid-template-columns: auto 1fr;
+        grid-template-columns: auto 0.9fr;
         padding: 2rem;
     }
 
@@ -196,7 +259,7 @@
     #name, #email, #message, #mobile{
         width: 100%;
         max-width: 100%;
-        padding: 1rem;
+        padding: 1.5rem;
         box-sizing: border-box;
     }
 
@@ -204,6 +267,7 @@
         max-width: 100%;
         align-self: flex-start;
         display: block;
+        font-size: 2rem;
     }
 
     .section-education{
@@ -222,7 +286,7 @@
 
     .contact-us-image{
         width: 100%;
-        max-width: 170px;
+        max-width: 250px;
         padding-left: 2rem;
     }
 
@@ -234,22 +298,18 @@
     .hero{
         min-height: auto;
         height: auto;
-        padding-block: clamp(4rem, 10vw, 4rem);
+        /* padding-block: clamp(4rem, 10vw, 4rem); */
         padding-bottom: 5rem;
     }
 
-    .project-section{
-        grid-template-columns: repeat(4, 1fr);
-        width: 70%;
-    }
-
     .project-card{
-        width: 95%;
-        justify-self: center;
+        width: 260px;
     }
 
-    #kitchenware-flyer{
-        display: none;
+    .carousel-arrow{
+        width: 40px;
+        height: 40px;
+        font-size: 1.6rem;
     }
 
     .footer{
@@ -258,6 +318,11 @@
         transform: none;
     }
 
+    .footer-text{
+        font-size: 2.5rem;
+        letter-spacing: 0.0005rem;
+    }
+    
     .footer-content{
         grid-template-columns: repeat(2, 1fr);
         gap: 3rem;
@@ -266,42 +331,28 @@
     .portfolio{
         grid-column: 1 / -1;
     }
-
-    .project-hover p{
-        font-size: 1rem;
-    }
-
-    .buttons{
-        gap: 1rem;
-    }
-
-    .buttons a{
-        padding: 7px 10px;
-    }
 }
 
 @media(max-width: 62rem){
 
-    .project-info h3 {
+    .footer-text{
+        font-size: 2.5rem;
+        letter-spacing: 0.0005rem;
+    }
+
+    .skills-cover{
         font-size: 2rem;
     }
 }
 
 @media(max-width: 57rem){
-    .project-section{
-        grid-template-columns: repeat(2, 1fr);
+    .project-card{
+        width: 240px;
     }
 
-    .project-hover p {
-        font-size: 2rem;
-    }
-
-    .project-hover{
-        height: 270px;
-    }
-
-    .project-card:hover .project-info {
-        transform: translateY(-260px);
+    .hero-section{
+        grid-template-columns: 2fr 1fr;
+        gap: 0;
     }
 }
 
@@ -338,55 +389,95 @@
     }
 
     .get-in-touch-content{
-        width: 85%;
-        grid-template-columns: auto 1fr;
+        width: 80%;
+        grid-template-columns: auto .8fr;
         gap: 2rem;
     }
 
     .contact-us-image{
         width: 100%;
-        max-width: 120px;
+        max-width: 190px;
         padding-left: 1rem;
     }
 
-    .project-info h3{
-        font-size: 3.7rem;
+    .project-card{
+        width: 220px;
     }
 
-    .project-hover p{
-        font-size: 2.5rem;
+    .carousel-arrow{
+        width: 36px;
+        height: 36px;
+        font-size: 1.4rem;
+    }
+
+    .buttons{
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: stretch;
+    }
+
+    .buttons a{
+        text-align: center;
+    }
+
+    .project-hover{
+        height: 120px;
+    }
+
+    .project-card:hover .project-info{
+        transform: translateY(-120px);
     }
 }
 
 @media(max-width: 50rem){
 
-    .project-card:hover .project-info{
-        transform: translateY(-400px);
-    }
-
-    .project-hover{
-        height: 400px;
-    }
-
-    .buttons a{
-        padding: 10px 15px;
+    .footer-text{
+        font-size: 2.5rem;
+        letter-spacing: 0.0005rem;
     }
 }
 
 @media(max-width: 44rem){
-    .project-info h3{
-        font-size: 3.5rem;
+    .intro-name{
+        margin-top: 3rem;
     }
 
-    .project-hover p{
-        font-size: 2rem;
+    .project-card{
+        width: 200px;
     }
-}
 
-@media(max-width: 38rem){
+    .nav-toggle{
+        display: block;
+        font-size: 3rem;
+        font-weight: 700;
+        background: white;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
 
-    html{
-        font-size: 31.25%;
+    .nav-links {
+        position: fixed;
+        inset: 0;
+        color: var(--white);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 5rem 0 0 5rem;
+        gap: 5rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 1000;
+        background: var(--secondary-shade);
+    }
+
+    .nav-links.active {
+        background: var(--secondary-shade);
+        transform: translateX(25%);
+        max-width: 80%;
+        color: var(--white);
+        font-size: var(--text-h4);
+        font-weight: 700;
     }
 
     .hero{
@@ -402,13 +493,31 @@
         justify-content: center;
     }
 
+    .hero{
+        padding-bottom: 0;
+    }
+
     .hero-section{
         display: block;
         margin: 0 auto;
     }
 
+    .intro-about{
+        font-size: var(--text-h4);
+    }
+
+    .about-me-para{
+        font-size: var(--text-paragraph);
+    }
+}
+
+@media(max-width: 38rem){
+
+    html{
+        font-size: 37.5%;
+    }
+
     .about-section{
-        width: 60%;
         margin: 0 auto;
     }
     
@@ -454,7 +563,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 90%;
+        width: 65%;
         padding: 2rem;
     }
 
@@ -471,12 +580,15 @@
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
+        padding: 2rem;
     }
 
     .submit-message{
         max-width: 100%;
         width: auto;
         align-self: flex-start;
+        font-size: 2.5rem;
+        padding: 2rem 4rem;
     }
 
     /* Footer stacks to single column */
@@ -486,6 +598,11 @@
         gap: 2.5rem;
     }
 
+    .footer-text{
+        font-size: 2.5rem;
+        letter-spacing: 0.0005rem;
+    }
+
     .socials{
         width: 28px;
     }
@@ -493,42 +610,35 @@
 
 @media(max-width: 37rem){
 
-.nav-bar{
-    margin-bottom: 5rem;
-}
-
-    .project-hover p{
-        display: none;
+    .nav-bar{
+        margin-bottom: 5rem;
     }
 
-    .project-hover{
-        height: 150px;
+    .project-card{
+        width: 180px;
     }
 
-    .project-info h3{
-        font-size: 2.7rem;
-    }
-
-    .buttons{
-        flex-direction: column;
-    }
-
-    .view, .code{
-        width: 100%;
-        text-align: center;
+    .carousel-arrow{
+        width: 32px;
+        height: 32px;
+        font-size: 1.2rem;
     }
 }
 
 @media(max-width: 28rem){
 
     html{
-        font-size: 25%;
+        font-size: 37.5%;
+    }
+
+    .footer-header{
+        font-size: 2.5rem;
     }
 
     .get-in-touch-content{
         display: flex;
         flex-direction: column;
-        width: 92%;
+        width: 70%;
         padding: 1.5rem;
     }
 
@@ -536,57 +646,57 @@
         display: none;
     }
 
+
     #name, #email, #message, #mobile{
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
-        padding: 1rem;
+        padding: 2rem;
     }
+
+    .footer-text{
+    font-size: 2.5rem;
+    letter-spacing: 0.0005rem;
+}
 }
 
 @media(max-width: 25rem){
 
     html{
-        font-size: 21.875%;
+        font-size: 50%;
     }
 
-    .nav-toggle{
-        display: block;
-        font-size: 3rem;
-        font-weight: 700;
-        background: white;
-        border: none;
-        cursor: pointer;
-        transition: all 0.3s ease;
+    .intro-name{
+        font-size: 3.4rem;
+        letter-spacing: -0.1rem;
     }
 
-    .nav-links {
-        position: fixed;
-        inset: 0;
-        color: var(--white);
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: flex-start;
-        padding: 5rem 0 0 5rem;
-        gap: 5rem;
-        transform: translateX(100%);
-        transition: transform 0.3s ease;
-        z-index: 1000;
-        background: var(--secondary-shade);
+    .intro-about{
+        font-size: 2.1rem;
     }
 
-    .nav-links.active {
-        background: var(--secondary-shade);
-        transform: translateX(25%);
-        max-width: 80%;
-        color: var(--white);
-        font-size: var(--text-h4);
-        font-weight: 700;
+    .nav-links a{
+        font-size: 2rem;
     }
 
+    .nav-links{
+        gap: 0;
+    }
+
+    .section-title, .about-me-name, .skills-title{
+        font-size: 2.5rem;
+    }
+
+    .about-section{
+        padding-bottom: 3rem;
+    }
+
+    .skills-cover{
+        font-size: 1.2rem;
+    }
     .hero-profile, .profile{
-        width: 130px;
-        height: 130px;
+        width: 200px;
+        height: 200px;
     }
 
     .profile{
@@ -613,14 +723,14 @@
 
     /* Contact form stays within card */
     .get-in-touch-content{
-        width: 95%;
+        width: 80%;
         padding: 1rem;
     }
 
     #name, #email, #message, #mobile{
         width: 100%;
         max-width: 100%;
-        padding: .8rem;
+        padding: 1.5rem;
         box-sizing: border-box;
     }
 
@@ -628,15 +738,28 @@
         margin-bottom: 3rem;
     }
 
+    .submit-message{
+        font-size: 2rem;
+    }
+
     .footer-content{
         display: flex;
         flex-direction: column;
         gap: 3rem;
     }
+
+    .footer-text{
+        font-size: 2rem;
+        letter-spacing: 0.0005rem;
+    }
 }
 
 @media(max-width: 23rem){
-    .project-info h3{
-        font-size: 2.2rem;
+    .project-card{
+        width: 150px;
+    }
+
+    .project-card:hover .project-info {
+        transform: translateY(-90px);
     }
 }

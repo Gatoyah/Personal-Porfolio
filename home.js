@@ -100,6 +100,111 @@ document.addEventListener("DOMContentLoaded", () => {
   // Fire once on load so visible sections appear immediately
   handleNavbarScroll();
   revealOnScroll();
+
+  // ─── Project Carousel ───
+  const carouselTrack = document.querySelector(".project-section");
+  const carouselCards = document.querySelectorAll(".project-card");
+  const carouselLeft = document.getElementById("carouselLeft");
+  const carouselRight = document.getElementById("carouselRight");
+  const carouselViewport = document.querySelector(".carousel-viewport");
+
+  if (carouselTrack && carouselCards.length > 0) {
+    let currentIndex = Math.floor(carouselCards.length / 2); // Start at the middle card
+
+    const getCardWidth = () => {
+      const card = carouselCards[0];
+      const style = window.getComputedStyle(carouselTrack);
+      const gap = parseFloat(style.gap) || 20;
+      return card.offsetWidth + gap;
+    };
+
+    const updateCarousel = () => {
+      const cardWidth = getCardWidth();
+      const viewportWidth = carouselViewport.offsetWidth;
+
+      // Calculate offset so the current card is centered in the viewport
+      const offset = (viewportWidth / 2) - (carouselCards[0].offsetWidth / 2) - (currentIndex * cardWidth);
+
+      carouselTrack.style.transform = `translateX(${offset}px)`;
+
+      // Apply faded / center classes
+      carouselCards.forEach((card, i) => {
+        card.classList.remove("center", "faded");
+        if (i === currentIndex) {
+          card.classList.add("center");
+        } else {
+          card.classList.add("faded");
+        }
+      });
+    };
+
+    carouselLeft.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateCarousel();
+      }
+    });
+
+    carouselRight.addEventListener("click", () => {
+      if (currentIndex < carouselCards.length - 1) {
+        currentIndex++;
+        updateCarousel();
+      }
+    });
+
+    // Initialize
+    updateCarousel();
+
+    // Recalculate on resize
+    window.addEventListener("resize", updateCarousel);
+  }
+
+  // ─── Typewriter Effect (Hero Section) ───
+  const skillText = document.querySelector(".intro-skills");
+  const skills = [
+    "Frontend Development",
+    "Backend Development",
+    "Canva Designing",
+    "3D Modelling/CAD"
+  ];
+  let skillIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  let typeSpeed = 100;
+
+  if (skillText) {
+    const type = () => {
+      const currentSkill = skills[skillIndex];
+      
+      if (isDeleting) {
+        // Remove a character
+        skillText.textContent = currentSkill.substring(0, charIndex - 1);
+        charIndex--;
+        typeSpeed = 50; // Deleting is faster
+      } else {
+        // Add a character
+        skillText.textContent = currentSkill.substring(0, charIndex + 1);
+        charIndex++;
+        typeSpeed = 100; // Normal typing speed
+      }
+
+      // If word is complete
+      if (!isDeleting && charIndex === currentSkill.length) {
+        // Pause at the end
+        isDeleting = true;
+        typeSpeed = 2000; // Stay for 2s
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        skillIndex = (skillIndex + 1) % skills.length;
+        typeSpeed = 500; // Short pause before next word
+      }
+
+      setTimeout(type, typeSpeed);
+    };
+
+    // Start the effect
+    type();
+  }
 });
 
 // ─── Mobile menu toggle ───
