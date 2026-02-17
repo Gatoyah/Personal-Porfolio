@@ -119,6 +119,7 @@ body{
     scroll-behavior: smooth;
     overflow-x: hidden;
     min-height: auto;
+    padding-top: var(--nav-height);
 }
 
 a{
@@ -177,14 +178,22 @@ h1{
 }
 
 .nav-bar{
-    /* position: fixed; */
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
     z-index: 100;
     height: var(--nav-height);
     background: var(--white);
     width: 100%;
-    margin-bottom: 10rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: background 0.35s ease, box-shadow 0.35s ease, backdrop-filter 0.35s ease;
+}
+
+.nav-bar.scrolled{
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.12);
 }
 
 .nav-bar-inner{
@@ -217,6 +226,7 @@ h1{
 /* Hero section */
 .hero{
     min-height:auto;
+    margin-top: 5rem;
 }
 
 .hero-section{
@@ -745,4 +755,53 @@ button {
 
 img{
     height: auto;
+}
+
+/* Scroll Reveal Animations */
+.reveal{
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.active{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Scroll-to-Top Button */
+.scroll-to-top{
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    z-index: 999;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background: var(--secondary-base);
+    color: var(--white);
+    font-size: 1.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(75, 68, 201, 0.35);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease, background 0.25s ease;
+}
+
+.scroll-to-top.visible{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.scroll-to-top:hover{
+    background: var(--secondary-shade);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 24px rgba(75, 68, 201, 0.45);
 }

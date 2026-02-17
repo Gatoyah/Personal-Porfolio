@@ -6,7 +6,6 @@
     .about-section{
         min-height: auto;
         padding-block: clamp(6rem, 10vw, 6rem);
-        /* margin-bottom: -10rem; */
     }
 
     .section-education{
@@ -20,8 +19,8 @@
     }
 
     h2, h3, h4, h5, h6{
-    line-height: var(--line-height-normal);
-    letter-spacing: 0;
+        line-height: var(--line-height-normal);
+        letter-spacing: 0;
     }
 
     .hero-profile, .profile{
@@ -37,7 +36,7 @@
 @media(max-width: 85rem){
 
     html{
-        font-size: 43.75%;
+        font-size: 50%;
     }
 
     .nav-bar, .about-me-para, .skills-lists, .footer{
@@ -74,11 +73,15 @@
     }
 
     .get-in-touch-content{
-        gap: 5rem;
+        width: 75%;
+        gap: 3rem;
+        grid-template-columns: 1fr 2fr;
     }
 
     .contact-us-image{
-        width: 250px;
+        width: 100%;
+        max-width: 250px;
+        padding-left: 2rem;
     }
 
     .education-image{
@@ -101,7 +104,7 @@
     }
 
     .project-card:hover .project-info {
-    transform: translateY(-215px);
+        transform: translateY(-215px);
     }
 
     .project-hover{
@@ -119,7 +122,7 @@
 @media(max-width: 65rem){
 
     html{
-        font-size: 37.5%;
+        font-size: 43.75%;
     }
 
     .nav-bar{
@@ -127,12 +130,10 @@
     }
 
     .hero-section{
-        /* margin-bottom: -40rem; */
         gap: 5rem;
     }
 
     .about-section{
-        /* margin-bottom: -40rem; */
         padding-block: clamp(3rem, 10vw, 3rem);
         padding-bottom: 5rem;
     }
@@ -181,21 +182,29 @@
     }
 
     .get-in-touch-content{
-        width: 50%;
-        gap: 5rem;
-        grid-template-columns: 45% 55%;
+        width: 80%;
+        gap: 2rem;
+        grid-template-columns: auto 1fr;
+        padding: 2rem;
     }
 
     .get-in-touch-submission, form{
-        max-width: 20rem;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    #name, #email, #message, #mobile{
+        width: 100%;
+        max-width: 100%;
+        padding: 1rem;
+        box-sizing: border-box;
     }
 
     .submit-message{
-        max-width: 35rem;
+        max-width: 100%;
         align-self: flex-start;
-        display: block
-}
-
+        display: block;
+    }
 
     .section-education{
         margin-bottom: .3rem;
@@ -212,8 +221,9 @@
     }
 
     .contact-us-image{
-        width: 170px;
-        padding-left: 7rem;
+        width: 100%;
+        max-width: 170px;
+        padding-left: 2rem;
     }
 
     .about{ 
@@ -230,8 +240,6 @@
 
     .project-section{
         grid-template-columns: repeat(4, 1fr);
-        /* gap: 5rem; */
-        /* justify-content: center; */
         width: 70%;
     }
 
@@ -247,13 +255,16 @@
     .footer{
         position: static;  
         width: 100%;
-        /* margin-top: 20rem; */
         transform: none;
     }
 
-    #name, #email, #message, #mobile{
-        width: 150%;
-        padding: 1rem;
+    .footer-content{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+
+    .portfolio{
+        grid-column: 1 / -1;
     }
 
     .project-hover p{
@@ -297,7 +308,7 @@
 @media(max-width: 52rem){
 
     html{
-        font-size: 28.125%;
+        font-size: 37.5%;
     }
 
     .nav-bar{
@@ -313,14 +324,13 @@
         width: 60%;
     }
 
-
     .skills-lists{
-            grid-template-columns: 1fr 1fr;
-        }
+        grid-template-columns: 1fr 1fr;
+    }
 
     .education-image{
-            width: 100px;
-            height: 100px;
+        width: 100px;
+        height: 100px;
     }
     
     .education{
@@ -328,17 +338,15 @@
     }
 
     .get-in-touch-content{
-        width: 50%;
-        grid-template-columns: 45% 55%;
+        width: 85%;
+        grid-template-columns: auto 1fr;
+        gap: 2rem;
     }
-/* 
-    .get-in-touch-submission form{
-        max-width: 100rem;
-    } */
 
     .contact-us-image{
-        width: 120px;
-        padding-left: 5rem;
+        width: 100%;
+        max-width: 120px;
+        padding-left: 1rem;
     }
 
     .project-info h3{
@@ -346,8 +354,8 @@
     }
 
     .project-hover p{
-            font-size: 2.5rem;
-        }
+        font-size: 2.5rem;
+    }
 }
 
 @media(max-width: 50rem){
@@ -376,6 +384,10 @@
 }
 
 @media(max-width: 38rem){
+
+    html{
+        font-size: 31.25%;
+    }
 
     .hero{
         margin: 0 auto;
@@ -437,21 +449,41 @@
         height: 65px;
     }
 
+    /* Get-in-touch stacks to single column */
     .get-in-touch-content{
-        display: block;
-        padding-left: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+        padding: 2rem;
     }
 
     .contact-us-image{
        display: none;
     }
 
-    #name, #email, #message, #mobile{
-        width: 150%;
+    .get-in-touch-submission, form{
+        max-width: 100%;
+        width: 100%;
     }
 
+    #name, #email, #message, #mobile{
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .submit-message{
+        max-width: 100%;
+        width: auto;
+        align-self: flex-start;
+    }
+
+    /* Footer stacks to single column */
     .footer-content{
-        gap: 1.3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
     }
 
     .socials{
@@ -489,16 +521,26 @@
 
 @media(max-width: 28rem){
 
+    html{
+        font-size: 25%;
+    }
+
     .get-in-touch-content{
-        display: block;
+        display: flex;
+        flex-direction: column;
+        width: 92%;
+        padding: 1.5rem;
     }
 
     .contact-us-image{
         display: none;
     }
 
-     #name, #email, #message, #mobile{
-        width: 170%;
+    #name, #email, #message, #mobile{
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        padding: 1rem;
     }
 }
 
@@ -539,7 +581,7 @@
         max-width: 80%;
         color: var(--white);
         font-size: var(--text-h4);
-        font-weight: 700
+        font-weight: 700;
     }
 
     .hero-profile, .profile{
@@ -569,9 +611,17 @@
         text-align: center;
     }
 
+    /* Contact form stays within card */
+    .get-in-touch-content{
+        width: 95%;
+        padding: 1rem;
+    }
+
     #name, #email, #message, #mobile{
-        width: 170%;
+        width: 100%;
+        max-width: 100%;
         padding: .8rem;
+        box-sizing: border-box;
     }
 
     #message{
