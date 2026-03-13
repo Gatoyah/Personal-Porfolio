@@ -1,79 +1,235 @@
-body{
-    background: var(--secondary-shade);
+/* ==================== PROJECTS PAGE ==================== */
+
+/* Page Background */
+body {
+  background: var(--primary-base);
+  min-height: 100vh;
 }
 
-.container{
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 90%;
+/* Hero Banner */
+.projects-hero {
+  background: linear-gradient(
+    135deg,
+    var(--primary-shade) 0%,
+    var(--primary-base) 40%,
+    var(--secondary-shade) 100%
+  );
+  padding: calc(var(--nav-height) + 6.4rem) 0 6.4rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.nav-bar{
-    margin-bottom: 3rem;
+.projects-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(75, 68, 201, 0.2), transparent 65%);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
-.filter-btn{
-    padding-bottom: 5rem;
-    width: 70%;
-    margin: 0 auto;
+.projects-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(240, 122, 43, 0.12), transparent 65%);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
-.btn{
-    background-color: var(--secondary-shade);
-    color: var(--white);
-    border: 2px solid var(--white);
-    padding: 1.5rem 3rem;
-    border-radius: 5px;
-    font-size: var(--text-base);
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-bottom: 1rem;
-    font-weight: var(--font-weight-bold);
-    margin-bottom: 2.5rem;
-    cursor: pointer;
+.container {
+  max-width: 1200px;
+  margin-inline: auto;
+  width: 90%;
+  position: relative;
+  z-index: 1;
 }
 
-.btn:hover, .btn:active{
-    background-color: var(--white);
-    border-color: var(--white);
-    color: var(--secondary-shade);
-    transition: background-color 0.3s ease;
+.project-heading {
+  font-size: var(--text-6xl);
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -2px;
+  margin-bottom: var(--space-3);
+  text-align: center;
 }
 
-.project-heading{
-    margin-bottom: 5rem;
-    text-align: center;
-    font-size: var(--text-h3);
-    color: var(--white);
-    letter-spacing: normal;
+.made {
+  color: var(--tertiary-base);
 }
 
-.made{
-    color: var(--tertiary-base);
+.projects-subtitle {
+  font-size: var(--text-lg);
+  color: rgba(255,255,255,0.6);
+  margin-bottom: var(--space-10);
 }
 
-.back-home{
-    display: flex;
-    justify-content: center;
+/* ==================== FILTER BUTTONS ==================== */
+.filter-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-10) 0 var(--space-8);
 }
 
-.btn-back{
-    display: flex;
-    justify-content: space-around;
-    background-color: var(--white);
-    color: var(--secondary-shade);
-    border: 2px solid var(--white);
-    padding: 1.5rem 3rem;
-    border-radius: 5px;
-    font-size: var(--text-base);
-    transition: background-color 0.3s ease;
-    font-weight: var(--font-weight-bold);
-    margin-bottom: 2.5rem;
+.filter-btn {
+  display: flex;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  justify-content: center;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: var(--space-2);
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(10px);
 }
 
-.btn-back:hover, .btn:active{
-    background-color: var(--secondary-shade);
-    border-color: var(--white);
-    color: var(--white);
-    transition: background-color 0.3s ease;
+.btn {
+  background: transparent;
+  color: rgba(255,255,255,0.65);
+  border: none;
+  padding: 1rem 2.4rem;
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  font-family: var(--font-family);
+  white-space: nowrap;
+}
+
+.btn:hover {
+  color: var(--white);
+  background: rgba(255,255,255,0.1);
+}
+
+.btn.active {
+  background: var(--secondary-base);
+  color: var(--white);
+  box-shadow: 0 4px 16px rgba(75, 68, 201, 0.4);
+}
+
+/* ==================== PROJECTS GRID ==================== */
+.projects-grid-section {
+  padding: 0 0 var(--space-16);
+}
+
+.project-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  max-width: 1200px;
+  width: 90%;
+  margin-inline: auto;
+  padding: 0;
+}
+
+.project-card {
+  width: auto;
+  flex-shrink: unset;
+  transition: opacity 0.4s ease, transform 0.4s ease, filter 0.4s ease;
+}
+
+.project-card.hidden {
+  display: none;
+}
+
+.project-card.fade-out {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+/* Override carousel-specific card styles for grid layout */
+.project-card.center,
+.project-card.faded {
+  opacity: 1;
+  filter: none;
+  transform: none;
+  box-shadow: var(--shadow-lg);
+}
+
+.project-card:hover.center,
+.project-card:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: var(--shadow-xl), 0 0 40px rgba(75, 68, 201, 0.2) !important;
+}
+
+/* ==================== BACK HOME BUTTON ==================== */
+.back-home {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-6) 0 var(--space-10);
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 1.4rem 3.2rem;
+  background: rgba(255,255,255,0.08);
+  color: var(--white);
+  border: 2px solid rgba(255,255,255,0.2);
+  border-radius: var(--radius-full);
+  font-size: var(--text-base);
+  font-weight: 700;
+  cursor: pointer;
+  font-family: var(--font-family);
+  transition: all var(--transition-base);
+  backdrop-filter: blur(10px);
+  text-decoration: none;
+}
+
+.btn-back:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: rgba(255,255,255,0.5);
+  transform: translateX(-4px);
+  box-shadow: 0 8px 24px rgba(255,255,255,0.08);
+}
+
+/* ==================== PROJECTS PAGE RESPONSIVE ==================== */
+@media (max-width: 64rem) {
+  .project-section {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+  }
+
+  .project-heading {
+    font-size: var(--text-5xl);
+  }
+}
+
+@media (max-width: 40rem) {
+  .project-section {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+    width: 95%;
+  }
+
+  .filter-btn {
+    padding: var(--space-2);
+    gap: var(--space-2);
+  }
+
+  .btn {
+    padding: 0.8rem 1.6rem;
+    font-size: var(--text-xs);
+  }
+
+  .project-heading {
+    font-size: var(--text-4xl);
+    letter-spacing: -1px;
+  }
+}
+
+@media (max-width: 26rem) {
+  .project-section {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+  }
 }

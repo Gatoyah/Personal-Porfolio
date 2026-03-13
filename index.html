@@ -3,40 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Portfolio</title>
+    <meta name="description" content="Gideon Atoyah — Full Stack Developer & Frontend Specialist from Ghana. Building elegant, scalable web experiences.">
+    <meta name="keywords" content="Gideon Atoyah, Frontend Developer, Full Stack Developer, Ghana, Portfolio, React, NodeJS">
+    <meta name="author" content="Gideon Atoyah">
+    <meta property="og:title" content="Gideon Atoyah | Full Stack Developer">
+    <meta property="og:description" content="Frontend & Backend Developer from Ghana. Building beautiful, scalable web apps.">
+    <meta property="og:type" content="website">
+    <title>Gideon Atoyah | Full Stack Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="app.css">
     <link rel="stylesheet" href="queries.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.13.0/lottie.min.js"></script>
 </head>
 <body>
 
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
     <!-- NAVBAR -->
-        <nav id="home" class="nav-bar">
-            <div class="nav-bar-inner">
-                <a href="#home" class="logo">
-                    <img class="logo-img socials-logo" src="images/logo.svg" alt="Logo">
-                    <p class="logo-name">GIDE</p>
-                </a>
-                <button class="nav-toggle" aria-label="Toggle menu">☰</button>
-                <ul class="nav-links">
-                    <li class="lists-nav"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="lists-nav"><a class="nav-link" href="#about">About</a></li>
-                    <li class="lists-nav"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="lists-nav"><a class="nav-link" href="#education">Education</a></li>
-                    <li class="lists-nav"><a class="nav-link" href="#project">Projects</a></li>
-                    <li class="lists-nav"><a class="nav-link" href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-          <!-- HERO SECTION -->
+    <nav id="home" class="nav-bar" role="navigation" aria-label="Main navigation">
+        <div class="nav-bar-inner">
+            <a href="#home" class="logo" aria-label="Go to home">
+                <img class="logo-img socials-logo" src="images/logo.svg" alt="Gideon Atoyah Logo">
+                <p class="logo-name">GIDE</p>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <ul class="nav-links" id="navLinks" role="list">
+                <li class="lists-nav"><a class="nav-link" href="#home">Home</a></li>
+                <li class="lists-nav"><a class="nav-link" href="#about">About</a></li>
+                <li class="lists-nav"><a class="nav-link" href="#skills">Skills</a></li>
+                <li class="lists-nav"><a class="nav-link" href="#education">Education</a></li>
+                <li class="lists-nav"><a class="nav-link" href="#project">Projects</a></li>
+                <li class="lists-nav"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
     <div class="container reveal">
         <div class="hero">
-            <section class="hero-section">
+            <section class="hero-section" aria-label="Hero section">
                 <div>
-                    <div class="hero-bg" id="canvas" width = "300px" height = "300px">
+                    <div class="hero-bg" id="canvas" aria-hidden="true">
                         <script>
                             const animation = bodymovin.loadAnimation({
                             container: document.getElementById('canvas'),
@@ -48,254 +62,353 @@
                         </script>
                     </div>
 
-                <div class="hero-content">
-                    <h1 class="intro-name">Hi There,<br>I'm Gideon <span class="name">Atoyah</span></h1>
+                    <div class="hero-content">
+                        <div class="hero-badge">👋 Available for Work</div>
+                        <h1 class="intro-name">Hi There,<br>I'm Gideon <span class="name">Atoyah</span></h1>
 
-                    <p class="intro-about">
-                        I Am Into 
-                        <span class="intro-skills">Frontend Development</span>
-                    </p>
+                        <p class="intro-about">
+                            I specialize in
+                            <span class="intro-skills" aria-live="polite">Frontend Development</span><span class="cursor">|</span>
+                        </p>
 
-                    <a class="about-me nav-link" href="#about">About Me ▼</a>
+                        <div class="hero-cta-group">
+                            <a class="about-me nav-link" href="#about" id="heroAboutBtn">About Me ↓</a>
+                            <a class="btn-outline nav-link" href="#contact">Hire Me</a>
+                        </div>
 
-                    <!-- SOCIAL LINKS -->
-                    <div class="socials-links">
-                        <a href="https://www.linkedin.com/in/gideon-atoyah-aa206a241/"> <img class="socials" src="images/linkenin.svg" alt="Linkedin"></a>
-                        <a href="https://github.com/Gatoyah"><img class="socials" src="images/github.svg" alt="GitHub"></a>
-                        <a href="https://x.com/g_hebbron20"><img class="socials" src="images/twitter.svg" alt="Twitter"></a>
-                        <a href="#"><img class="socials" src="images/telegram.svg" alt="Telegram"></a>
-                        <a href="#"><img class="socials" src="images/instagram.svg" alt="Instagram"></a>
+                        <!-- SOCIAL LINKS -->
+                        <div class="socials-links" aria-label="Social media links">
+                            <a href="https://www.linkedin.com/in/gideon-atoyah-aa206a241/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
+                                <img class="socials" src="images/linkenin.svg" alt="LinkedIn">
+                            </a>
+                            <a href="https://github.com/Gatoyah" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
+                                <img class="socials" src="images/github.svg" alt="GitHub">
+                            </a>
+                            <a href="https://x.com/g_hebbron20" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X Profile">
+                                <img class="socials" src="images/twitter.svg" alt="Twitter">
+                            </a>
+                            <a href="#" aria-label="Telegram">
+                                <img class="socials" src="images/telegram.svg" alt="Telegram">
+                            </a>
+                            <a href="#" aria-label="Instagram">
+                                <img class="socials" src="images/instagram.svg" alt="Instagram">
+                            </a>
+                        </div>
                     </div>
-                </div>
                 </div>
 
                 <!-- HERO SECTION IMAGE -->
-                <img class="hero-profile" src="images/gideonnn.png" alt="Profile Image">
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-ring"></div>
+                    <img class="hero-profile" src="images/gideonnn.png" alt="Gideon Atoyah - Full Stack Developer">
+                    <div class="hero-floating-badge badge-1">
+                        <span class="badge-icon">⚡</span>
+                        <span>React</span>
+                    </div>
+                    <div class="hero-floating-badge badge-2">
+                        <span class="badge-icon">🌐</span>
+                        <span>Node.js</span>
+                    </div>
+                </div>
             </section>
+        </div>
     </div>
-</div>
-      
-    <section id="about"  class="about reveal">
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about reveal" aria-label="About me section">
         <div class="about-section">
-            <h1 class="section-title">👤 About <span class="edit-me">Me</span></h1>
+            <h2 class="section-title">👤 About <span class="edit-me">Me</span></h2>
             <div class="about-content">
-                <img src="images/gideonnn.png" alt="Profile Image" class="profile">
-                </li>
+                <div class="about-image-container">
+                    <img src="images/gideonnn.png" alt="Gideon Atoyah profile photo" class="profile">
+                    <div class="about-image-decoration"></div>
+                </div>
                 <div class="about-text">
-                    <h2 class="about-me-name">I'm Gideon Atoyah</h2>
+                    <h3 class="about-me-name">I'm Gideon Atoyah</h3>
                     <p class="about-me-title">Full Stack Developer</p>
                     <p class="about-me-para">
-                        I am a backend developer with a passion for creating efficient and scalable web applications. With a strong foundation in server-side technologies, I specialize in building robust APIs and managing databases. I enjoy solving complex problems and continuously learning new technologies to enhance my skills.
+                        I am a passionate Full Stack Developer with a strong eye for clean design and efficient code. With expertise in both frontend and backend technologies, I build scalable web applications that deliver exceptional user experiences. I thrive on solving complex problems and continuously expanding my technical skill set.
                     </p>
-                <li>
-                    <ul><span>Email:</span> gideonatoyah@gmail.com</ul>
-                    <ul><span>Country: </span>Ghana</ul>
-                </li>
-                    <a class="resume" href="assets/resume/My CV.pdf" target="_blank" rel="noopener">Resume ></a>
+                    <div class="about-details">
+                        <div class="about-detail-item">
+                            <span class="detail-label">📧 Email</span>
+                            <span class="detail-value">gideonatoyah@gmail.com</span>
+                        </div>
+                        <div class="about-detail-item">
+                            <span class="detail-label">🌍 Country</span>
+                            <span class="detail-value">Ghana</span>
+                        </div>
+                        <div class="about-detail-item">
+                            <span class="detail-label">🎓 Degree</span>
+                            <span class="detail-value">BSc Biomedical Engineering</span>
+                        </div>
+                        <div class="about-detail-item">
+                            <span class="detail-label">💼 Status</span>
+                            <span class="detail-value status-available">Available for hire</span>
+                        </div>
+                    </div>
+                    <a class="resume" href="assets/resume/My CV.pdf" target="_blank" rel="noopener" aria-label="Download Resume">
+                        Download Resume ↗
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <div id="skills" class="skills reveal">
-        <h1 class="skills-title">💻 Skills ﹠ <span class="skills-title-highlight">Abilities</span></h1>
+    <!-- SKILLS SECTION -->
+    <div id="skills" class="skills reveal" aria-label="Skills and abilities section">
+        <h2 class="skills-title">💻 Skills &amp; <span class="skills-title-highlight">Abilities</span></h2>
         <div class="skills-container">
-            <li class="skills-lists">
-                <ul class="skills-cover"><img class="skills-icons" src="skills-icons/html.svg" alt="">HTML5</ul>
-                <ul class="skills-cover"><img class="skills-icons" src="skills-icons/css.svg" alt="">CSS3</ul>
-                <ul class="skills-cover"><img class="skills-icons" src="skills-icons/javascript.svg" alt="">JavaScript</ul>
-                <ul class="skills-cover"><img class="skills-icons" src="skills-icons/bootstrap.svg" alt="">Bootstrap</ul>
-                <ul class="skills-cover"><img class="skills-icons" src="skills-icons/tailwindcss.svg" alt="">Tailwind CSS</ul>
-                <ul class="skills-cover"><img class="skills-icons" src="skills-icons/nodejs.svg" alt="">NodeJS</ul>
-                <ul class="skills-cover"><img class="skills-icons" src="skills-icons/expressjs-dark.svg" alt="">ExpressJS</ul>
-                <ul class="skills-cover"><img class="skills-icons" src="skills-icons/react.svg" alt="">React</ul>
-                <ul class="skills-cover"><img class="skills-icons" src="skills-icons/github.svg" alt="">GitHub</ul>
-                <ul class="skills-cover"><img class="skills-icons" src="skills-icons/aws.svg" alt="">AWS</ul>
-                <ul class="skills-cover"><img class="skills-icons" src="skills-icons/wordpress.svg" alt="">WordPress</ul>
-                <ul class="skills-cover"><img class="skills-icons" src="skills-icons/mongodb.svg" alt="">MongoDB</ul>
-            </li>
+            <ul class="skills-lists" role="list">
+                <li class="skills-cover">
+                    <img class="skills-icons" src="skills-icons/html.svg" alt="HTML5 icon">
+                    <span>HTML5</span>
+                </li>
+                <li class="skills-cover">
+                    <img class="skills-icons" src="skills-icons/css.svg" alt="CSS3 icon">
+                    <span>CSS3</span>
+                </li>
+                <li class="skills-cover">
+                    <img class="skills-icons" src="skills-icons/javascript.svg" alt="JavaScript icon">
+                    <span>JavaScript</span>
+                </li>
+                <li class="skills-cover">
+                    <img class="skills-icons" src="skills-icons/bootstrap.svg" alt="Bootstrap icon">
+                    <span>Bootstrap</span>
+                </li>
+                <li class="skills-cover">
+                    <img class="skills-icons" src="skills-icons/tailwindcss.svg" alt="Tailwind CSS icon">
+                    <span>Tailwind CSS</span>
+                </li>
+                <li class="skills-cover">
+                    <img class="skills-icons" src="skills-icons/nodejs.svg" alt="NodeJS icon">
+                    <span>NodeJS</span>
+                </li>
+                <li class="skills-cover">
+                    <img class="skills-icons" src="skills-icons/expressjs-dark.svg" alt="ExpressJS icon">
+                    <span>ExpressJS</span>
+                </li>
+                <li class="skills-cover">
+                    <img class="skills-icons" src="skills-icons/react.svg" alt="React icon">
+                    <span>React</span>
+                </li>
+                <li class="skills-cover">
+                    <img class="skills-icons" src="skills-icons/github.svg" alt="GitHub icon">
+                    <span>GitHub</span>
+                </li>
+                <li class="skills-cover">
+                    <img class="skills-icons" src="skills-icons/aws.svg" alt="AWS icon">
+                    <span>AWS</span>
+                </li>
+                <li class="skills-cover">
+                    <img class="skills-icons" src="skills-icons/wordpress.svg" alt="WordPress icon">
+                    <span>WordPress</span>
+                </li>
+                <li class="skills-cover">
+                    <img class="skills-icons" src="skills-icons/mongodb.svg" alt="MongoDB icon">
+                    <span>MongoDB</span>
+                </li>
+            </ul>
         </div>
     </div>
-    
-    <div id="education" class="section-education reveal">
+
+    <!-- EDUCATION SECTION -->
+    <div id="education" class="section-education reveal" aria-label="Education section">
         <div class="education">
             <section class="education-title">
-                <h1 class="education-header">&#127891 My <span class="edit-education">Education</span></h1>
-                <p>Education Is The Key To Unlocking The World, A Passport To Freedom</p>
+                <h2 class="education-header">🎓 My <span class="edit-education">Education</span></h2>
+                <p class="education-quote">Education is the key to unlocking the world, a passport to freedom</p>
             </section>
 
-            <div class="uni">
-                <img class="education-image" src="images/knustlogo.jpg" alt="">
-                <section class="uni-description">
-                    <p class="program">Bsc Biomedical Engineering</p><br>
-                    <p class="school">Kwame Nkrumah University Of Science And Technology</p><br>
-                    <p class="year"> 2021-2025</p>
-                </section>
-            </div>
+            <div class="education-cards">
+                <div class="uni edu-card">
+                    <div class="edu-card-left">
+                        <img class="education-image" src="images/knustlogo.jpg" alt="KNUST University Logo">
+                    </div>
+                    <section class="uni-description">
+                        <div class="edu-badge">University</div>
+                        <p class="program">BSc Biomedical Engineering</p>
+                        <p class="school">Kwame Nkrumah University of Science and Technology</p>
+                        <p class="year">🗓 2021 – 2025</p>
+                    </section>
+                </div>
 
-            <div class="shs">
-                <img class="education-image" src="images/sthubertlogo.png" alt="">
-                <section class="shs-description">
-                    <p class="program">General Science</p><br>
-                    <p class="school">St Hubert Seminary Senior High School</p><br>
-                    <p class="year">2018-2021</p>
-                </section>
+                <div class="shs edu-card">
+                    <div class="edu-card-left">
+                        <img class="education-image" src="images/sthubertlogo.png" alt="St. Hubert Seminary SHS Logo">
+                    </div>
+                    <section class="shs-description">
+                        <div class="edu-badge edu-badge--secondary">Senior High School</div>
+                        <p class="program">General Science</p>
+                        <p class="school">St. Hubert Seminary Senior High School</p>
+                        <p class="year">🗓 2018 – 2021</p>
+                    </section>
+                </div>
             </div>
         </div>
     </div>
 
-
-    <div id="project" class="project reveal">
-        <h1 class="project-heading">💻 PROJECTS <span class="project-heading-edit">MADE</span></h1>
+    <!-- PROJECTS SECTION -->
+    <div id="project" class="project reveal" aria-label="Projects section">
+        <h2 class="project-heading">💻 Projects <span class="project-heading-edit">Made</span></h2>
 
         <div class="carousel-wrapper">
             <button class="carousel-arrow carousel-arrow--left" id="carouselLeft" aria-label="Previous project">&#10094;</button>
 
-            <div class="carousel-viewport">
-                <section class="project-section">
-        
-                    <div class="project-card">
+            <div class="carousel-viewport" role="region" aria-label="Project carousel">
+                <section class="project-section" aria-label="Project cards">
+
+                    <div class="project-card" data-category="frontend">
                         <div class="project-image">
-                            <img src="assets/projects/barber.png" alt="">
+                            <img src="assets/projects/barber.png" alt="Barber Website Project Screenshot">
                         </div>
                         <div class="project-info">
                             <h3 class="project-name">Barber Website</h3>
+                            <span class="project-tag">Frontend</span>
                         </div>
                         <div class="project-hover">
-                            <p class="project-description">A clean and responsive barbering website designed to showcase services, pricing, and barbers with an easy appointment flow. Built to give customers a clear view of available styles while helping the business attract and convert walk-in and online clients</p>
+                            <p class="project-description">A clean and responsive barbering website designed to showcase services, pricing, and barbers with an easy appointment flow.</p>
                             <div class="buttons">
-                                <a class="view" href="#">View 👁</a>
-                                <a class="code" href="#">Code 💻</a>
+                                <a class="view" href="#" target="_blank" rel="noopener">View ↗</a>
+                                <a class="code" href="#" target="_blank" rel="noopener">Code ⌨</a>
                             </div>
-                        </div>  
+                        </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-category="uiux">
                         <div class="project-image">
-                            <img src="assets/projects/photolab-project.png" alt="">
+                            <img src="assets/projects/photolab-project.png" alt="Photolab Project Screenshot">
                         </div>
                         <div class="project-info">
                             <h3 class="project-name">Photolab</h3>
+                            <span class="project-tag">UI/UX</span>
                         </div>
                         <div class="project-hover">
-                            <p class="project-description">PhotoLab is a minimalist landing page concept for a photography and photo-editing brand. The project focuses on the hero section only, highlighting strong visual hierarchy, bold typography, and imagery to immediately capture attention and communicate the brand's creative identity.</p>
+                            <p class="project-description">A minimalist landing page concept for a photography brand, focusing on visual hierarchy and bold typography.</p>
                             <div class="buttons">
-                                <a class="view" href="#">View 👁</a>
-                                <a class="code" href="#">Code 💻</a>
+                                <a class="view" href="#" target="_blank" rel="noopener">View ↗</a>
+                                <a class="code" href="#" target="_blank" rel="noopener">Code ⌨</a>
                             </div>
-                        </div>  
+                        </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-category="uiux">
                         <div class="project-image">
-                            <img src="assets/projects/fondo-project.png" alt="">
+                            <img src="assets/projects/fondo-project.png" alt="Fondo Project Screenshot">
                         </div>
                         <div class="project-info">
                             <h3 class="project-name">Fondo</h3>
+                            <span class="project-tag">UI/UX</span>
                         </div>
                         <div class="project-hover">
-                            <p class="project-description">Fondo is a UI/UX design concept focused on the hero section of a modern digital product. The project explores layout, spacing, typography, and color harmony to create a visually appealing and user-friendly first impression</p>
+                            <p class="project-description">A UI/UX design concept exploring layout, spacing, typography, and color harmony for a modern digital product.</p>
                             <div class="buttons">
-                                <a class="view" href="#">View 👁</a>
-                                <a class="code" href="#">Code 💻</a>
+                                <a class="view" href="#" target="_blank" rel="noopener">View ↗</a>
+                                <a class="code" href="#" target="_blank" rel="noopener">Code ⌨</a>
                             </div>
-                        </div>  
+                        </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-category="frontend">
                         <div class="project-image">
-                            <img src="assets/projects/calculator.png" alt="">
+                            <img src="assets/projects/calculator.png" alt="iPhone Calculator Project Screenshot">
                         </div>
                         <div class="project-info">
                             <h3 class="project-name">Calculator</h3>
+                            <span class="project-tag">Frontend</span>
                         </div>
                         <div class="project-hover">
-                            <p class="project-description">This project is a fully functional iPhone-style calculator built to replicate the original user experience. It handles core arithmetic operations with accurate logic, smooth interactions, and a familiar interface, demonstrating attention to detail in both functionality and UI behavior.</p>
+                            <p class="project-description">A fully functional iPhone-style calculator with accurate logic, smooth interactions, and a faithful interface.</p>
                             <div class="buttons">
-                                <a class="view" href="https://gatoyah.github.io/Iphone-Calculator/">View 👁</a>
-                                <a class="code" href="https://github.com/Gatoyah/Iphone-Calculator">Code 💻</a>
+                                <a class="view" href="https://gatoyah.github.io/Iphone-Calculator/" target="_blank" rel="noopener">View ↗</a>
+                                <a class="code" href="https://github.com/Gatoyah/Iphone-Calculator" target="_blank" rel="noopener">Code ⌨</a>
                             </div>
-                        </div>  
+                        </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-category="uiux">
                         <div class="project-image">
-                            <img src="assets/projects/login-form.png" alt="">
+                            <img src="assets/projects/login-form.png" alt="Login Form Project Screenshot">
                         </div>
                         <div class="project-info">
                             <h3 class="project-name">Login Form</h3>
+                            <span class="project-tag">UI/UX</span>
                         </div>
                         <div class="project-hover">
-                            <p class="project-description">This project is a clean and responsive login form designed with usability and accessibility in mind. It emphasizes clear input fields, intuitive layout, and visual feedback to ensure a smooth and user-friendly authentication experience</p>
+                            <p class="project-description">A clean and responsive login form emphasizing clear input fields, intuitive layout, and visual feedback.</p>
                             <div class="buttons">
-                                <a class="view" href="#">View 👁</a>
-                                <a class="code" href="#">Code 💻</a>
+                                <a class="view" href="#" target="_blank" rel="noopener">View ↗</a>
+                                <a class="code" href="#" target="_blank" rel="noopener">Code ⌨</a>
                             </div>
-                        </div>  
+                        </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-category="frontend">
                         <div class="project-image">
-                            <img src="assets/projects/quill-project.png" alt="">
+                            <img src="assets/projects/quill-project.png" alt="Quill Journal App Screenshot">
                         </div>
                         <div class="project-info">
                             <h3 class="project-name">Quill</h3>
+                            <span class="project-tag">Frontend</span>
                         </div>
                         <div class="project-hover">
-                            <p class="project-description">The Journal App is a simple productivity tool designed for taking notes, journaling, and organizing personal thoughts. It focuses on clarity, ease of use, and a distraction-free interface to encourage consistent writing and organization</p>
+                            <p class="project-description">A distraction-free journal app for notes and personal thoughts, focused on clarity and ease of use.</p>
                             <div class="buttons">
-                                <a class="view" href="#">View 👁</a>
-                                <a class="code" href="#">Code 💻</a>
+                                <a class="view" href="#" target="_blank" rel="noopener">View ↗</a>
+                                <a class="code" href="#" target="_blank" rel="noopener">Code ⌨</a>
                             </div>
-                        </div>  
+                        </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-category="fullstack">
                         <div class="project-image">
-                            <img src="assets/projects/Vitatale.png" alt="">
+                            <img src="assets/projects/Vitatale.png" alt="Vitatale Wellness App Screenshot">
                         </div>
                         <div class="project-info">
                             <h3 class="project-name">Vitatale</h3>
+                            <span class="project-tag">Full Stack</span>
                         </div>
                         <div class="project-hover">
-                            <p class="project-description">VitaTale is a lifestyle and wellness application that tracks daily habits such as water intake, step count, mood, stress levels, and sleep hours. Using this data, it generates a personalized daily routine aimed at helping users build healthier habits and improve overall well-being.</p>
+                            <p class="project-description">A lifestyle app tracking water intake, steps, mood, and sleep hours to generate personalized daily routines.</p>
                             <div class="buttons">
-                                <a class="view" href="#">View 👁</a>
-                                <a class="code" href="#">Code 💻</a>
+                                <a class="view" href="#" target="_blank" rel="noopener">View ↗</a>
+                                <a class="code" href="#" target="_blank" rel="noopener">Code ⌨</a>
                             </div>
-                        </div>  
+                        </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-category="canva">
                         <div class="project-image">
-                            <img src="assets/projects/Merry.jpg" alt="">
+                            <img src="assets/projects/Merry.jpg" alt="Christmas Flyer Design">
                         </div>
                         <div class="project-info">
                             <h3 class="project-name">Christmas Flyer</h3>
+                            <span class="project-tag">Canva</span>
                         </div>
                         <div class="project-hover">
-                            <p class="project-description">A festive Christmas flyer design combining bold visuals and seasonal themes to capture the holiday spirit. Designed to attract attention and communicate event details with clarity and warmth.</p>
+                            <p class="project-description">A festive Christmas flyer combining bold visuals and seasonal themes to capture the holiday spirit.</p>
                             <div class="buttons">
-                                <a class="view" href="#">View 👁</a>
-                                <a class="code" href="#">Code 💻</a>
+                                <a class="view" href="#" target="_blank" rel="noopener">View ↗</a>
+                                <a class="code" href="#" target="_blank" rel="noopener">Code ⌨</a>
                             </div>
-                        </div>  
+                        </div>
                     </div>
 
-                    <div class="project-card">
+                    <div class="project-card" data-category="canva">
                         <div class="project-image">
-                            <img src="assets/projects/venex.jpg" alt="">
+                            <img src="assets/projects/venex.jpg" alt="Kitchenware Flyer Design">
                         </div>
                         <div class="project-info">
                             <h3 class="project-name">Kitchenware Flyer</h3>
+                            <span class="project-tag">Canva</span>
                         </div>
                         <div class="project-hover">
-                            <p class="project-description">A promotional kitchenware flyer designed to highlight products with clean layout, appealing imagery, and clear pricing. Built to drive customer interest and boost sales.</p>
+                            <p class="project-description">A promotional kitchenware flyer with a clean layout, appealing imagery, and clear pricing to drive sales.</p>
                             <div class="buttons">
-                                <a class="view" href="#">View 👁</a>
-                                <a class="code" href="#">Code 💻</a>
+                                <a class="view" href="#" target="_blank" rel="noopener">View ↗</a>
+                                <a class="code" href="#" target="_blank" rel="noopener">Code ⌨</a>
                             </div>
-                        </div>  
+                        </div>
                     </div>
 
                 </section>
@@ -303,104 +416,122 @@
 
             <button class="carousel-arrow carousel-arrow--right" id="carouselRight" aria-label="Next project">&#10095;</button>
         </div>
-        
+
+        <!-- Carousel Dots -->
+        <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Project navigation"></div>
+
         <div class="view-all">
-            <a href="projects/project.html" class="buttons buttons-view-all">View all ></a>
+            <a href="projects/project.html" class="buttons-view-all">View All Projects ↗</a>
         </div>
     </div>
 
-    <div id="contact" class="get-in-touch reveal">
-        <h1 class="get-in-touch-heading">🎧 Get In <span>Touch</span></h1>
+    <!-- CONTACT SECTION -->
+    <div id="contact" class="get-in-touch reveal" aria-label="Contact section">
+        <h2 class="get-in-touch-heading">🎧 Get In <span>Touch</span></h2>
+        <p class="contact-subtitle">Have a project in mind? Let's build something amazing together.</p>
         <div class="get-in-touch-content">
-            <img class="contact-us-image" src="images/contact-us (2).svg" alt="">
+            <img class="contact-us-image" src="images/contact-us (2).svg" alt="Contact illustration">
             <div class="get-in-touch-submission">
-                <form class="form" action="#" method="post">
+                <form class="form" id="contactForm" action="#" method="post" novalidate>
                     <!-- Name -->
-                    <label for="name"></label>
-                    <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="👤 Name"
-                    required
-                    >
+                    <div class="form-group">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="John Doe" required autocomplete="name">
+                    </div>
 
                     <!-- Email -->
-                    <label for="email"></label>
-                    <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    placeholder="&#128232 Email"
-                    required
-                    >
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required autocomplete="email">
+                    </div>
 
                     <!-- Mobile -->
-                    <label for="mobile"></label>
-                    <input
-                    type="tel"
-                    id="mobile"
-                    name="mobile"
-                    placeholder="📱 Mobile"
-                    >
+                    <div class="form-group">
+                        <label for="mobile" class="form-label">Phone Number <span class="optional">(optional)</span></label>
+                        <input type="tel" id="mobile" name="mobile" placeholder="+233 xx xxx xxxx" autocomplete="tel">
+                    </div>
 
                     <!-- Message -->
-                    <label for="message"></label>
-                    <textarea
-                    id="message"
-                    name="message"
-                    rows="5"
-                    placeholder="&#128495 Message"
-                    required
-                    ></textarea>
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                    </div>
 
                     <!-- Submit Button -->
-                    <button class="submit-message" type="submit">Send Message</button>
+                    <button class="submit-message" type="submit" id="submitBtn">
+                        <span class="btn-text">Send Message ✉</span>
+                        <span class="btn-loading" style="display:none;">Sending...</span>
+                    </button>
                 </form>
             </div>
         </div>
     </div>
 
-    <!-- footer -->
-    <footer class="footer reveal">
+    <!-- FOOTER -->
+    <footer class="footer reveal" role="contentinfo">
         <div class="footer-content">
             <div class="portfolio">
-                <h2 class="footer-header">Portfolio</h2>
-                <p class="footer-text">Thank you for visiting my personal portfolio website!</p>
+                <div class="footer-logo">
+                    <img class="logo-img" src="images/logo.svg" alt="Logo" style="width:32px; filter: brightness(0) invert(1);">
+                    <h3 class="footer-header">Gideon Atoyah</h3>
+                </div>
+                <p class="footer-text">Full Stack Developer crafting beautiful, scalable web experiences from Ghana 🇬🇭</p>
+                <div class="footer-socials">
+                    <a href="https://www.linkedin.com/in/gideon-atoyah-aa206a241/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <img class="socials" src="images/linkenin.svg" alt="LinkedIn">
+                    </a>
+                    <a href="https://github.com/Gatoyah" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <img class="socials" src="images/github.svg" alt="GitHub">
+                    </a>
+                    <a href="https://x.com/g_hebbron20" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                        <img class="socials" src="images/twitter.svg" alt="Twitter">
+                    </a>
+                    <a href="#" aria-label="Telegram">
+                        <img class="socials" src="images/telegram.svg" alt="Telegram">
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <img class="socials" src="images/instagram.svg" alt="Instagram">
+                    </a>
+                </div>
             </div>
 
             <div class="footer-links">
-                <h2 class="footer-header">Quick Links</h2>
-                <ul class="quick-links">
-                    <li><a class="nav-link footer-text" href="#home">> Home</a></li>
-                    <li><a class="nav-link footer-text" href="#about">> About</a></li>
-                    <li><a class="nav-link footer-text" href="#skills">> Skills</a></li>
-                    <li><a class="nav-link footer-text" href="#education">> Education</a></li>
-                    <li><a class="nav-link footer-text" href="#project">> Projects</a></li>
+                <h3 class="footer-header">Quick Links</h3>
+                <ul class="quick-links" role="list">
+                    <li><a class="nav-link footer-text" href="#home">→ Home</a></li>
+                    <li><a class="nav-link footer-text" href="#about">→ About</a></li>
+                    <li><a class="nav-link footer-text" href="#skills">→ Skills</a></li>
+                    <li><a class="nav-link footer-text" href="#education">→ Education</a></li>
+                    <li><a class="nav-link footer-text" href="#project">→ Projects</a></li>
+                    <li><a class="nav-link footer-text" href="#contact">→ Contact</a></li>
                 </ul>
             </div>
 
             <div class="contact-info">
-                <h2 class = "footer-header">Contact Info</h2>
-                <p class="footer-text">📞 +233257770578</p>
-                <p class="footer-text">📧 gideonatoyah@gmail.com</p>
-                <p class="footer-text">📍 Ghana</p>
-
-                <div class="footer-socials">
-                    <a href="https://www.linkedin.com/in/gideon-atoyah-aa206a241/"> <img class="socials" src="images/linkenin.svg" alt="Linkedin"></a>
-                    <a href="https://github.com/Gatoyah"><img class="socials" src="images/github.svg" alt="GitHub"></a>
-                    <a href="https://x.com/g_hebbron20"><img class="socials" src="images/twitter.svg" alt="Twitter"></a>
-                    <a href=""><img class="socials" src="images/telegram.svg" alt="Telegram"></a>
-                    <a href="#"><img class="socials" src="images/instagram.svg" alt="Instagram"></a>
+                <h3 class="footer-header">Contact Info</h3>
+                <div class="contact-detail">
+                    <span>📞</span>
+                    <p class="footer-text">+233 257 770 578</p>
+                </div>
+                <div class="contact-detail">
+                    <span>📧</span>
+                    <p class="footer-text">gideonatoyah@gmail.com</p>
+                </div>
+                <div class="contact-detail">
+                    <span>📍</span>
+                    <p class="footer-text">Kumasi, Ghana</p>
                 </div>
             </div>
-            
+        </div>
+
+        <div class="footer-bottom">
+            <p class="footer-copyright">© <span id="year"></span> Gideon Atoyah. All rights reserved.</p>
+            <p class="footer-copyright">Made with ❤️ in Ghana</p>
         </div>
     </footer>
 
-
     <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">&#9650;</button>
+    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">↑</button>
 
     <script src="home.js"></script>
 </body>
