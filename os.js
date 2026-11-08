@@ -178,17 +178,15 @@ const GLYPH = {
   min: '<path d="M5 12h14"/>',
   max: '<path d="M7 17 17 7M9 7h8v8"/>',
 };
+const P = "linear-gradient(145deg,var(--p-500),var(--p-700))";   // primary · teal
+const S = "linear-gradient(145deg,var(--s-500),var(--s-700))";   // secondary · navy
+const SD = "linear-gradient(145deg,var(--s-700),var(--s-900))";  // secondary · deep navy
+const T = "linear-gradient(145deg,var(--t-500),var(--t-700))";   // tertiary · gold
 const G = {
-  "g-teal": "linear-gradient(145deg,#2dd4bf,#0f766e)",
-  "g-violet": "linear-gradient(145deg,#a78bfa,#5b21b6)",
-  "g-blue": "linear-gradient(145deg,#60a5fa,#1d4ed8)",
-  "g-amber": "linear-gradient(145deg,#fcd34d,#d97706)",
-  "g-rose": "linear-gradient(145deg,#fb7185,#be123c)",
-  "g-green": "linear-gradient(145deg,#4ade80,#15803d)",
-  "g-slate": "linear-gradient(145deg,#475569,#0f172a)",
-  "g-ink": "linear-gradient(145deg,#1f2937,#030712)",
-  "g-sky": "linear-gradient(145deg,#38bdf8,#0369a1)",
-  "g-white": "linear-gradient(145deg,#f8fafc,#cbd5e1)",
+  "g-teal": P, "g-violet": P, "g-sky": P,
+  "g-blue": S, "g-amber": S, "g-rose": S, "g-white": S,
+  "g-ink": SD, "g-slate": SD,
+  "g-green": T,
 };
 const svg = (name, cls = "") => `<svg viewBox="0 0 24 24" class="${cls}" aria-hidden="true">${GLYPH[name]}</svg>`;
 const ico = (name, g) => `<span class="ico" style="--g:${G[g] || g}">${svg(name)}</span>`;
@@ -221,10 +219,9 @@ const APPS = {
   mail:       { name: "Contact",      icon: "mail",     g: "g-sky",    w: 640, h: 620, render: renderMail, mount: mountMail },
   settings:   { name: "Settings",     icon: "sliders",  g: "g-slate",  w: 520, h: 460, render: renderSettings, mount: mountSettings },
 };
-// white CV icon needs dark glyph
 const iconFor = (id) => {
   const a = APPS[id];
-  return id === "cv" ? `<span class="ico" style="--g:${G["g-white"]};color:#0f172a">${svg(a.icon)}</span>` : ico(a.icon, a.g);
+  return ico(a.icon, a.g);
 };
 
 function renderAbout() {
@@ -328,7 +325,7 @@ function mountResearch(root, opts = {}) {
     const heat = d.querySelector("[data-heat]");
     if (heat) {
       const cells = [...heat.children];
-      const tick = () => cells.forEach((c, k) => c.style.setProperty("--h", Math.round(220 - (0.5 + 0.5 * Math.sin(Date.now() / 900 + k * 1.3)) * 220)));
+      const tick = () => cells.forEach((c, k) => c.style.setProperty("--h", Math.round(15 + (0.5 + 0.5 * Math.sin(Date.now() / 900 + k * 1.3)) * 85) + "%"));
       tick(); timers.push(setInterval(tick, 1000));
     }
     const cyc = d.querySelector("[data-cycle]");
@@ -470,8 +467,6 @@ function renderSettings() {
     <h1 class="h1" style="font-size:24px">Settings</h1>
     <div class="set-row"><div><b>Appearance</b><span>Dark, light or follow your device</span></div>
       <div class="seg" data-seg="theme">${["dark", "light", "system"].map((t) => `<button data-v="${t}">${t[0].toUpperCase() + t.slice(1)}</button>`).join("")}</div></div>
-    <div class="set-row"><div><b>Accent</b><span>Tint for highlights and charts</span></div>
-      <div class="swatches">${[["teal", "#5eead4"], ["violet", "#a78bfa"], ["amber", "#fbbf24"], ["blue", "#60a5fa"]].map(([n, c]) => `<button class="swatch" data-accent="${n}" style="background:${c}" aria-label="${n}"></button>`).join("")}</div></div>
     <div class="set-row"><div><b>Calm mode</b><span>Turn off background animation</span></div>
       <div class="seg" data-seg="calm"><button data-v="off">Off</button><button data-v="on">On</button></div></div>
     <div class="set-row" style="border:0"><div><b>About GideonOS</b><span>Version 26 · Biomedical Edition</span></div>
@@ -482,12 +477,10 @@ function mountSettings(root) {
   const sync = () => {
     root.querySelectorAll('[data-seg="theme"] button').forEach((b) => b.classList.toggle("on", b.dataset.v === prefs.theme));
     root.querySelectorAll('[data-seg="calm"] button').forEach((b) => b.classList.toggle("on", b.dataset.v === (prefs.calm ? "on" : "off")));
-    root.querySelectorAll("[data-accent]").forEach((b) => b.classList.toggle("on", b.dataset.accent === prefs.accent));
   };
   root.addEventListener("click", (e) => {
     const t = e.target.closest('[data-seg="theme"] button'); if (t) setPref("theme", t.dataset.v);
     const c = e.target.closest('[data-seg="calm"] button'); if (c) setPref("calm", c.dataset.v === "on");
-    const a = e.target.closest("[data-accent]"); if (a) setPref("accent", a.dataset.accent);
     if (e.target.closest("[data-reboot]")) { try { sessionStorage.removeItem("booted"); } catch {} location.reload(); }
     sync();
   });
@@ -558,14 +551,13 @@ const store = {
   get(k, d) { try { const v = localStorage.getItem("gos." + k); return v === null ? d : JSON.parse(v); } catch { return d; } },
   set(k, v) { try { localStorage.setItem("gos." + k, JSON.stringify(v)); } catch {} },
 };
-const prefs = { theme: store.get("theme", "dark"), accent: store.get("accent", "teal"), calm: store.get("calm", false) };
+const prefs = { theme: store.get("theme", "dark"), calm: store.get("calm", false) };
 const mqDark = matchMedia("(prefers-color-scheme: dark)");
 function applyPrefs() {
   const t = prefs.theme === "system" ? (mqDark.matches ? "dark" : "light") : prefs.theme;
   document.documentElement.dataset.theme = t;
-  document.documentElement.dataset.accent = prefs.accent;
   document.documentElement.classList.toggle("calm", !!prefs.calm);
-  document.querySelector('meta[name="theme-color"]').content = t === "dark" ? "#05070d" : "#eef1f6";
+  document.querySelector('meta[name="theme-color"]').content = t === "dark" ? "#060b16" : "#f2f5fb";
 }
 function setPref(k, v) { prefs[k] = v; store.set(k, v); applyPrefs(); }
 mqDark.addEventListener?.("change", applyPrefs);
@@ -695,7 +687,7 @@ let sheet = null;
 function buildPhone() {
   $("#phWidgets").innerHTML = `
     <button class="widget wide" data-open="about"><div class="ph-hero"><div class="avatar"><img src="images/gideonnn.png" alt=""></div>
-      <div><h2>Gideon <em>Atoyah</em></h2><p>Biomedical Engineer · First Class, KNUST<br><span style="color:#22c55e">●</span> Open to PhD positions</p></div></div></button>
+      <div><h2>Gideon <em>Atoyah</em></h2><p>Biomedical Engineer · First Class, KNUST<br><span style="color:var(--tert)">●</span> Open to PhD positions</p></div></div></button>
     ${widgetNow().replace('class="widget"', 'class="widget wide"')}
     ${widgetCWA()}${widgetProjects()}`;
   $("#phGrid").innerHTML = PH_GRID.map((id) => `<button class="ph-app" data-open="${id}">${iconFor(id)}<span>${APPS[id].name.replace(".pdf", "")}</span></button>`).join("");
