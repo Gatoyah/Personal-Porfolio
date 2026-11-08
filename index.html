@@ -1,538 +1,135 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta name="description" content="Gideon Atoyah — Full Stack Developer & Frontend Specialist from Ghana. Building elegant, scalable web experiences.">
-    <meta name="keywords" content="Gideon Atoyah, Frontend Developer, Full Stack Developer, Ghana, Portfolio, React, NodeJS">
-    <meta name="author" content="Gideon Atoyah">
-    <meta property="og:title" content="Gideon Atoyah | Full Stack Developer">
-    <meta property="og:description" content="Frontend & Backend Developer from Ghana. Building beautiful, scalable web apps.">
-    <meta property="og:type" content="website">
-    <title>Gideon Atoyah | Full Stack Developer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="app.css">
-    <link rel="stylesheet" href="queries.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.13.0/lottie.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Gideon Atoyah — Biomedical Engineer</title>
+  <meta name="description" content="Gideon Atoyah — Biomedical Engineering graduate (First Class, KNUST). Research in medical imaging, deep learning for healthcare, bioinstrumentation and embedded medical devices. Seeking PhD and research-based graduate study.">
+  <meta name="author" content="Gideon Atoyah">
+  <meta name="theme-color" content="#060b16">
+  <meta property="og:title" content="Gideon Atoyah — Biomedical Engineer">
+  <meta property="og:description" content="Medical imaging · ML for healthcare · Bioinstrumentation. First Class BSc Biomedical Engineering, KNUST.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="images/gideonnn.png">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%23060b16'/%3E%3Cpath d='M4 17h6l2.5-7 5 13 2.5-6H28' fill='none' stroke='%235eead4' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="os.css">
 </head>
 <body>
 
-    <!-- Scroll Progress Bar -->
-    <div class="scroll-progress" id="scrollProgress"></div>
-
-    <!-- NAVBAR -->
-    <nav id="home" class="nav-bar" role="navigation" aria-label="Main navigation">
-        <div class="nav-bar-inner">
-            <a href="#home" class="logo" aria-label="Go to home">
-                <img class="logo-img socials-logo" src="images/logo.svg" alt="Gideon Atoyah Logo">
-                <p class="logo-name">GIDE</p>
-            </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-                <span class="hamburger-line"></span>
-            </button>
-            <ul class="nav-links" id="navLinks" role="list">
-                <li class="lists-nav"><a class="nav-link" href="#home">Home</a></li>
-                <li class="lists-nav"><a class="nav-link" href="#about">About</a></li>
-                <li class="lists-nav"><a class="nav-link" href="#skills">Skills</a></li>
-                <li class="lists-nav"><a class="nav-link" href="#education">Education</a></li>
-                <li class="lists-nav"><a class="nav-link" href="#project">Projects</a></li>
-                <li class="lists-nav"><a class="nav-link" href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- HERO SECTION -->
-    <div class="container reveal">
-        <div class="hero">
-            <section class="hero-section" aria-label="Hero section">
-                <div>
-                    <div class="hero-bg" id="canvas" aria-hidden="true">
-                        <script>
-                            const animation = bodymovin.loadAnimation({
-                            container: document.getElementById('canvas'),
-                            renderer: 'svg',
-                            loop: true,
-                            autoplay: true,
-                            path: 'background-sparkles.json'
-                        })
-                        </script>
-                    </div>
-
-                    <div class="hero-content">
-                        <div class="hero-badge">👋 Available for Work</div>
-                        <h1 class="intro-name">Hi There,<br>I'm Gideon <span class="name">Atoyah</span></h1>
-
-                        <p class="intro-about">
-                            I specialize in
-                            <span class="intro-skills" aria-live="polite">Frontend Development</span><span class="cursor">|</span>
-                        </p>
-
-                        <div class="hero-cta-group">
-                            <a class="about-me nav-link" href="#about" id="heroAboutBtn">About Me ↓</a>
-                            <a class="btn-outline nav-link" href="#contact">Hire Me</a>
-                        </div>
-
-                        <!-- SOCIAL LINKS -->
-                        <div class="socials-links" aria-label="Social media links">
-                            <a href="https://www.linkedin.com/in/gideon-atoyah-aa206a241/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile">
-                                <img class="socials" src="images/linkenin.svg" alt="LinkedIn">
-                            </a>
-                            <a href="https://github.com/Gatoyah" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile">
-                                <img class="socials" src="images/github.svg" alt="GitHub">
-                            </a>
-                            <a href="https://x.com/g_hebbron20" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X Profile">
-                                <img class="socials" src="images/twitter.svg" alt="Twitter">
-                            </a>
-                            <a href="#" aria-label="Telegram">
-                                <img class="socials" src="images/telegram.svg" alt="Telegram">
-                            </a>
-                            <a href="#" aria-label="Instagram">
-                                <img class="socials" src="images/instagram.svg" alt="Instagram">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- HERO SECTION IMAGE -->
-                <div class="hero-image-wrapper">
-                    <div class="hero-image-ring"></div>
-                    <img class="hero-profile" src="images/gideonnn.png" alt="Gideon Atoyah - Full Stack Developer">
-                    <div class="hero-floating-badge badge-1">
-                        <span class="badge-icon">⚡</span>
-                        <span>React</span>
-                    </div>
-                    <div class="hero-floating-badge badge-2">
-                        <span class="badge-icon">🌐</span>
-                        <span>Node.js</span>
-                    </div>
-                </div>
-            </section>
-        </div>
+  <!-- ============ BOOT ============ -->
+  <div id="boot" aria-hidden="true">
+    <div class="boot-inner">
+      <svg class="boot-ecg" viewBox="0 0 400 80" preserveAspectRatio="none">
+        <path d="M0 40 H120 L135 40 L145 18 L158 66 L170 6 L182 58 L192 40 H260 L270 32 L280 40 H400"/>
+      </svg>
+      <div class="boot-name">Gideon<span>OS</span></div>
+      <div class="boot-bar"><i></i></div>
+      <div class="boot-hint">Calibrating sensors · loading research…</div>
     </div>
+  </div>
 
-    <!-- ABOUT SECTION -->
-    <section id="about" class="about reveal" aria-label="About me section">
-        <div class="about-section">
-            <h2 class="section-title">👤 About <span class="edit-me">Me</span></h2>
-            <div class="about-content">
-                <div class="about-image-container">
-                    <img src="images/gideonnn.png" alt="Gideon Atoyah profile photo" class="profile">
-                    <div class="about-image-decoration"></div>
-                </div>
-                <div class="about-text">
-                    <h3 class="about-me-name">I'm Gideon Atoyah</h3>
-                    <p class="about-me-title">Full Stack Developer</p>
-                    <p class="about-me-para">
-                        I am a passionate Full Stack Developer with a strong eye for clean design and efficient code. With expertise in both frontend and backend technologies, I build scalable web applications that deliver exceptional user experiences. I thrive on solving complex problems and continuously expanding my technical skill set.
-                    </p>
-                    <div class="about-details">
-                        <div class="about-detail-item">
-                            <span class="detail-label">📧 Email</span>
-                            <span class="detail-value">gideonatoyah@gmail.com</span>
-                        </div>
-                        <div class="about-detail-item">
-                            <span class="detail-label">🌍 Country</span>
-                            <span class="detail-value">Ghana</span>
-                        </div>
-                        <div class="about-detail-item">
-                            <span class="detail-label">🎓 Degree</span>
-                            <span class="detail-value">BSc Biomedical Engineering</span>
-                        </div>
-                        <div class="about-detail-item">
-                            <span class="detail-label">💼 Status</span>
-                            <span class="detail-value status-available">Available for hire</span>
-                        </div>
-                    </div>
-                    <a class="resume" href="assets/resume/My CV.pdf" target="_blank" rel="noopener" aria-label="Download Resume">
-                        Download Resume ↗
-                    </a>
-                </div>
-            </div>
-        </div>
+  <!-- ============ DESKTOP (≥ 761px) ============ -->
+  <div id="desktop" class="wallpaper">
+    <div class="wp-grid"></div>
+    <div class="wp-blob b1"></div><div class="wp-blob b2"></div><div class="wp-blob b3"></div>
+    <svg class="wp-ecg" viewBox="0 0 1600 200" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M0 100 H300 L320 100 L335 60 L355 150 L372 20 L390 130 L402 100 H700 L715 88 L730 100 H1000 L1020 100 L1035 60 L1055 150 L1072 20 L1090 130 L1102 100 H1400 L1415 88 L1430 100 H1600"/>
+    </svg>
+
+    <header class="menubar">
+      <div class="mb-left">
+        <button class="mb-logo" data-open="about" aria-label="About Gideon">
+          <svg viewBox="0 0 24 24"><path d="M2 12h5l2-5 4 10 2-5h7"/></svg>
+        </button>
+        <strong class="mb-app" id="mbApp">Desktop</strong>
+        <nav class="mb-menu">
+          <button data-open="research">Research</button>
+          <button data-open="courses">Courses</button>
+          <button data-open="experience">Experience</button>
+          <button data-open="cv">CV</button>
+          <button data-open="mail">Contact</button>
+        </nav>
+      </div>
+      <div class="mb-right">
+        <span class="mb-status"><i></i>Open to PhD positions</span>
+        <button class="mb-icon" id="mbSearch" aria-label="Search (Ctrl+K)">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        </button>
+        <button class="mb-icon" id="mbTheme" aria-label="Toggle theme">
+          <svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <span class="mb-clock" id="mbClock"></span>
+      </div>
+    </header>
+
+    <div class="desk-icons" id="deskIcons"></div>
+
+    <section class="hero" aria-label="Introduction">
+      <p class="hero-kicker">Biomedical Engineer · Kumasi, Ghana</p>
+      <h1 class="hero-name">Gideon<br><em>Atoyah</em></h1>
+      <p class="hero-sub">I build things that see inside the body — synthetic X-rays, segmentation models, and sensor-based medical devices.</p>
+      <div class="hero-cta">
+        <button class="btn primary" data-open="research">Explore research</button>
+        <button class="btn ghost" data-open="cv">Read CV</button>
+        <span class="kbd-hint">or press <kbd>Ctrl</kbd> <kbd>K</kbd></span>
+      </div>
     </section>
 
-    <!-- SKILLS SECTION -->
-    <div id="skills" class="skills reveal" aria-label="Skills and abilities section">
-        <h2 class="skills-title">💻 Skills &amp; <span class="skills-title-highlight">Abilities</span></h2>
-        <div class="skills-container">
-            <ul class="skills-lists" role="list">
-                <li class="skills-cover">
-                    <img class="skills-icons" src="skills-icons/html.svg" alt="HTML5 icon">
-                    <span>HTML5</span>
-                </li>
-                <li class="skills-cover">
-                    <img class="skills-icons" src="skills-icons/css.svg" alt="CSS3 icon">
-                    <span>CSS3</span>
-                </li>
-                <li class="skills-cover">
-                    <img class="skills-icons" src="skills-icons/javascript.svg" alt="JavaScript icon">
-                    <span>JavaScript</span>
-                </li>
-                <li class="skills-cover">
-                    <img class="skills-icons" src="skills-icons/bootstrap.svg" alt="Bootstrap icon">
-                    <span>Bootstrap</span>
-                </li>
-                <li class="skills-cover">
-                    <img class="skills-icons" src="skills-icons/tailwindcss.svg" alt="Tailwind CSS icon">
-                    <span>Tailwind CSS</span>
-                </li>
-                <li class="skills-cover">
-                    <img class="skills-icons" src="skills-icons/nodejs.svg" alt="NodeJS icon">
-                    <span>NodeJS</span>
-                </li>
-                <li class="skills-cover">
-                    <img class="skills-icons" src="skills-icons/expressjs-dark.svg" alt="ExpressJS icon">
-                    <span>ExpressJS</span>
-                </li>
-                <li class="skills-cover">
-                    <img class="skills-icons" src="skills-icons/react.svg" alt="React icon">
-                    <span>React</span>
-                </li>
-                <li class="skills-cover">
-                    <img class="skills-icons" src="skills-icons/github.svg" alt="GitHub icon">
-                    <span>GitHub</span>
-                </li>
-                <li class="skills-cover">
-                    <img class="skills-icons" src="skills-icons/aws.svg" alt="AWS icon">
-                    <span>AWS</span>
-                </li>
-                <li class="skills-cover">
-                    <img class="skills-icons" src="skills-icons/wordpress.svg" alt="WordPress icon">
-                    <span>WordPress</span>
-                </li>
-                <li class="skills-cover">
-                    <img class="skills-icons" src="skills-icons/mongodb.svg" alt="MongoDB icon">
-                    <span>MongoDB</span>
-                </li>
-            </ul>
-        </div>
+    <aside class="widgets" id="widgets"></aside>
+
+    <div id="windows"></div>
+
+    <nav class="dock" id="dock" aria-label="Dock"></nav>
+  </div>
+
+  <!-- ============ PHONE (≤ 760px) ============ -->
+  <div id="phone" class="wallpaper">
+    <div class="wp-blob b1"></div><div class="wp-blob b2"></div><div class="wp-blob b3"></div>
+    <div class="statusbar">
+      <span class="sb-time" id="sbTime"></span>
+      <span class="sb-island"></span>
+      <span class="sb-icons">
+        <svg viewBox="0 0 24 24"><path d="M2 20h2v-3H2zM7 20h2v-6H7zM12 20h2v-9h-2zM17 20h2V7h-2z" class="fill"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M2 9a15 15 0 0 1 20 0M5.5 12.5a10 10 0 0 1 13 0M9 16a5 5 0 0 1 6 0"/><circle cx="12" cy="19" r="1" class="fill"/></svg>
+        <span class="sb-batt"><i></i></span>
+      </span>
     </div>
+    <main class="home" id="home">
+      <button class="ph-search" id="phSearch"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Search Gideon’s research</button>
+      <div class="ph-widgets" id="phWidgets"></div>
+      <div class="ph-grid" id="phGrid"></div>
+      <div class="ph-dots"><i class="on"></i><i></i></div>
+    </main>
+    <nav class="ph-dock" id="phDock"></nav>
+    <div id="sheets"></div>
+    <button class="home-ind" id="homeInd" aria-label="Go home"><i></i></button>
+  </div>
 
-    <!-- EDUCATION SECTION -->
-    <div id="education" class="section-education reveal" aria-label="Education section">
-        <div class="education">
-            <section class="education-title">
-                <h2 class="education-header">🎓 My <span class="edit-education">Education</span></h2>
-                <p class="education-quote">Education is the key to unlocking the world, a passport to freedom</p>
-            </section>
-
-            <div class="education-cards">
-                <div class="uni edu-card">
-                    <div class="edu-card-left">
-                        <img class="education-image" src="images/knustlogo.jpg" alt="KNUST University Logo">
-                    </div>
-                    <section class="uni-description">
-                        <div class="edu-badge">University</div>
-                        <p class="program">BSc Biomedical Engineering</p>
-                        <p class="school">Kwame Nkrumah University of Science and Technology</p>
-                        <p class="year">🗓 2021 – 2025</p>
-                    </section>
-                </div>
-
-                <div class="shs edu-card">
-                    <div class="edu-card-left">
-                        <img class="education-image" src="images/sthubertlogo.png" alt="St. Hubert Seminary SHS Logo">
-                    </div>
-                    <section class="shs-description">
-                        <div class="edu-badge edu-badge--secondary">Senior High School</div>
-                        <p class="program">General Science</p>
-                        <p class="school">St. Hubert Seminary Senior High School</p>
-                        <p class="year">🗓 2018 – 2021</p>
-                    </section>
-                </div>
-            </div>
-        </div>
+  <!-- ============ SPOTLIGHT ============ -->
+  <div id="spotlight" hidden>
+    <div class="sp-panel" role="dialog" aria-label="Search">
+      <div class="sp-input">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="spInput" type="text" placeholder="Search research, courses, skills…" autocomplete="off" spellcheck="false">
+        <kbd>esc</kbd>
+      </div>
+      <ul class="sp-results" id="spResults"></ul>
     </div>
+  </div>
 
-    <!-- PROJECTS SECTION -->
-    <div id="project" class="project reveal" aria-label="Projects section">
-        <h2 class="project-heading">💻 Projects <span class="project-heading-edit">Made</span></h2>
+  <div id="toast" role="status"></div>
 
-        <div class="carousel-wrapper">
-            <button class="carousel-arrow carousel-arrow--left" id="carouselLeft" aria-label="Previous project">&#10094;</button>
-
-            <div class="carousel-viewport" role="region" aria-label="Project carousel">
-                <section class="project-section" aria-label="Project cards">
-
-                    <div class="project-card" data-category="frontend">
-                        <div class="project-image">
-                            <img src="assets/projects/barber.png" alt="Barber Website Project Screenshot">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-name">Barber Website</h3>
-                            <span class="project-tag">Frontend</span>
-                        </div>
-                        <div class="project-hover">
-                            <p class="project-description">A clean and responsive barbering website designed to showcase services, pricing, and barbers with an easy appointment flow.</p>
-                            <div class="buttons">
-                                <a class="view" href="#" target="_blank" rel="noopener">View ↗</a>
-                                <a class="code" href="#" target="_blank" rel="noopener">Code ⌨</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-category="uiux">
-                        <div class="project-image">
-                            <img src="assets/projects/photolab-project.png" alt="Photolab Project Screenshot">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-name">Photolab</h3>
-                            <span class="project-tag">UI/UX</span>
-                        </div>
-                        <div class="project-hover">
-                            <p class="project-description">A minimalist landing page concept for a photography brand, focusing on visual hierarchy and bold typography.</p>
-                            <div class="buttons">
-                                <a class="view" href="#" target="_blank" rel="noopener">View ↗</a>
-                                <a class="code" href="#" target="_blank" rel="noopener">Code ⌨</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-category="uiux">
-                        <div class="project-image">
-                            <img src="assets/projects/fondo-project.png" alt="Fondo Project Screenshot">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-name">Fondo</h3>
-                            <span class="project-tag">UI/UX</span>
-                        </div>
-                        <div class="project-hover">
-                            <p class="project-description">A UI/UX design concept exploring layout, spacing, typography, and color harmony for a modern digital product.</p>
-                            <div class="buttons">
-                                <a class="view" href="#" target="_blank" rel="noopener">View ↗</a>
-                                <a class="code" href="#" target="_blank" rel="noopener">Code ⌨</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-category="frontend">
-                        <div class="project-image">
-                            <img src="assets/projects/calculator.png" alt="iPhone Calculator Project Screenshot">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-name">Calculator</h3>
-                            <span class="project-tag">Frontend</span>
-                        </div>
-                        <div class="project-hover">
-                            <p class="project-description">A fully functional iPhone-style calculator with accurate logic, smooth interactions, and a faithful interface.</p>
-                            <div class="buttons">
-                                <a class="view" href="https://gatoyah.github.io/Iphone-Calculator/" target="_blank" rel="noopener">View ↗</a>
-                                <a class="code" href="https://github.com/Gatoyah/Iphone-Calculator" target="_blank" rel="noopener">Code ⌨</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-category="uiux">
-                        <div class="project-image">
-                            <img src="assets/projects/login-form.png" alt="Login Form Project Screenshot">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-name">Login Form</h3>
-                            <span class="project-tag">UI/UX</span>
-                        </div>
-                        <div class="project-hover">
-                            <p class="project-description">A clean and responsive login form emphasizing clear input fields, intuitive layout, and visual feedback.</p>
-                            <div class="buttons">
-                                <a class="view" href="#" target="_blank" rel="noopener">View ↗</a>
-                                <a class="code" href="#" target="_blank" rel="noopener">Code ⌨</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-category="frontend">
-                        <div class="project-image">
-                            <img src="assets/projects/quill-project.png" alt="Quill Journal App Screenshot">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-name">Quill</h3>
-                            <span class="project-tag">Frontend</span>
-                        </div>
-                        <div class="project-hover">
-                            <p class="project-description">A distraction-free journal app for notes and personal thoughts, focused on clarity and ease of use.</p>
-                            <div class="buttons">
-                                <a class="view" href="#" target="_blank" rel="noopener">View ↗</a>
-                                <a class="code" href="#" target="_blank" rel="noopener">Code ⌨</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-category="fullstack">
-                        <div class="project-image">
-                            <img src="assets/projects/Vitatale.png" alt="Vitatale Wellness App Screenshot">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-name">Vitatale</h3>
-                            <span class="project-tag">Full Stack</span>
-                        </div>
-                        <div class="project-hover">
-                            <p class="project-description">A lifestyle app tracking water intake, steps, mood, and sleep hours to generate personalized daily routines.</p>
-                            <div class="buttons">
-                                <a class="view" href="#" target="_blank" rel="noopener">View ↗</a>
-                                <a class="code" href="#" target="_blank" rel="noopener">Code ⌨</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-category="canva">
-                        <div class="project-image">
-                            <img src="assets/projects/Merry.jpg" alt="Christmas Flyer Design">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-name">Christmas Flyer</h3>
-                            <span class="project-tag">Canva</span>
-                        </div>
-                        <div class="project-hover">
-                            <p class="project-description">A festive Christmas flyer combining bold visuals and seasonal themes to capture the holiday spirit.</p>
-                            <div class="buttons">
-                                <a class="view" href="#" target="_blank" rel="noopener">View ↗</a>
-                                <a class="code" href="#" target="_blank" rel="noopener">Code ⌨</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-category="canva">
-                        <div class="project-image">
-                            <img src="assets/projects/venex.jpg" alt="Kitchenware Flyer Design">
-                        </div>
-                        <div class="project-info">
-                            <h3 class="project-name">Kitchenware Flyer</h3>
-                            <span class="project-tag">Canva</span>
-                        </div>
-                        <div class="project-hover">
-                            <p class="project-description">A promotional kitchenware flyer with a clean layout, appealing imagery, and clear pricing to drive sales.</p>
-                            <div class="buttons">
-                                <a class="view" href="#" target="_blank" rel="noopener">View ↗</a>
-                                <a class="code" href="#" target="_blank" rel="noopener">Code ⌨</a>
-                            </div>
-                        </div>
-                    </div>
-
-                </section>
-            </div>
-
-            <button class="carousel-arrow carousel-arrow--right" id="carouselRight" aria-label="Next project">&#10095;</button>
-        </div>
-
-        <!-- Carousel Dots -->
-        <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Project navigation"></div>
-
-        <div class="view-all">
-            <a href="projects/project.html" class="buttons-view-all">View All Projects ↗</a>
-        </div>
+  <noscript>
+    <div style="padding:40px;font-family:sans-serif;color:#fff;background:#060b16;position:fixed;inset:0;z-index:9999">
+      <h1>Gideon Atoyah</h1>
+      <p>Biomedical Engineering graduate (First Class Honours, KNUST). Research in medical imaging, deep learning for healthcare, bioinstrumentation and embedded medical devices.</p>
+      <p><a style="color:#5eead4" href="assets/resume/Gideon_Atoyah_CV.pdf">Download CV</a> · <a style="color:#5eead4" href="mailto:gideonatoyah@gmail.com">gideonatoyah@gmail.com</a></p>
     </div>
+  </noscript>
 
-    <!-- CONTACT SECTION -->
-    <div id="contact" class="get-in-touch reveal" aria-label="Contact section">
-        <h2 class="get-in-touch-heading">🎧 Get In <span>Touch</span></h2>
-        <p class="contact-subtitle">Have a project in mind? Let's build something amazing together.</p>
-        <div class="get-in-touch-content">
-            <img class="contact-us-image" src="images/contact-us (2).svg" alt="Contact illustration">
-            <div class="get-in-touch-submission">
-                <form class="form" id="contactForm" action="#" method="post" novalidate>
-                    <!-- Name -->
-                    <div class="form-group">
-                        <label for="name" class="form-label">Full Name</label>
-                        <input type="text" id="name" name="name" placeholder="John Doe" required autocomplete="name">
-                    </div>
-
-                    <!-- Email -->
-                    <div class="form-group">
-                        <label for="email" class="form-label">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="john@example.com" required autocomplete="email">
-                    </div>
-
-                    <!-- Mobile -->
-                    <div class="form-group">
-                        <label for="mobile" class="form-label">Phone Number <span class="optional">(optional)</span></label>
-                        <input type="tel" id="mobile" name="mobile" placeholder="+233 xx xxx xxxx" autocomplete="tel">
-                    </div>
-
-                    <!-- Message -->
-                    <div class="form-group">
-                        <label for="message" class="form-label">Message</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
-                    </div>
-
-                    <!-- Submit Button -->
-                    <button class="submit-message" type="submit" id="submitBtn">
-                        <span class="btn-text">Send Message ✉</span>
-                        <span class="btn-loading" style="display:none;">Sending...</span>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- FOOTER -->
-    <footer class="footer reveal" role="contentinfo">
-        <div class="footer-content">
-            <div class="portfolio">
-                <div class="footer-logo">
-                    <img class="logo-img" src="images/logo.svg" alt="Logo" style="width:32px; filter: brightness(0) invert(1);">
-                    <h3 class="footer-header">Gideon Atoyah</h3>
-                </div>
-                <p class="footer-text">Full Stack Developer crafting beautiful, scalable web experiences from Ghana 🇬🇭</p>
-                <div class="footer-socials">
-                    <a href="https://www.linkedin.com/in/gideon-atoyah-aa206a241/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <img class="socials" src="images/linkenin.svg" alt="LinkedIn">
-                    </a>
-                    <a href="https://github.com/Gatoyah" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                        <img class="socials" src="images/github.svg" alt="GitHub">
-                    </a>
-                    <a href="https://x.com/g_hebbron20" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                        <img class="socials" src="images/twitter.svg" alt="Twitter">
-                    </a>
-                    <a href="#" aria-label="Telegram">
-                        <img class="socials" src="images/telegram.svg" alt="Telegram">
-                    </a>
-                    <a href="#" aria-label="Instagram">
-                        <img class="socials" src="images/instagram.svg" alt="Instagram">
-                    </a>
-                </div>
-            </div>
-
-            <div class="footer-links">
-                <h3 class="footer-header">Quick Links</h3>
-                <ul class="quick-links" role="list">
-                    <li><a class="nav-link footer-text" href="#home">→ Home</a></li>
-                    <li><a class="nav-link footer-text" href="#about">→ About</a></li>
-                    <li><a class="nav-link footer-text" href="#skills">→ Skills</a></li>
-                    <li><a class="nav-link footer-text" href="#education">→ Education</a></li>
-                    <li><a class="nav-link footer-text" href="#project">→ Projects</a></li>
-                    <li><a class="nav-link footer-text" href="#contact">→ Contact</a></li>
-                </ul>
-            </div>
-
-            <div class="contact-info">
-                <h3 class="footer-header">Contact Info</h3>
-                <div class="contact-detail">
-                    <span>📞</span>
-                    <p class="footer-text">+233 257 770 578</p>
-                </div>
-                <div class="contact-detail">
-                    <span>📧</span>
-                    <p class="footer-text">gideonatoyah@gmail.com</p>
-                </div>
-                <div class="contact-detail">
-                    <span>📍</span>
-                    <p class="footer-text">Kumasi, Ghana</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p class="footer-copyright">© <span id="year"></span> Gideon Atoyah. All rights reserved.</p>
-            <p class="footer-copyright">Made with ❤️ in Ghana</p>
-        </div>
-    </footer>
-
-    <!-- Scroll to Top Button -->
-    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">↑</button>
-
-    <script src="home.js"></script>
+  <script src="os.js"></script>
 </body>
 </html>
